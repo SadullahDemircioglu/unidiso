@@ -4,8 +4,8 @@ services:
   web:
     build: .
     restart: unless-stopped
-    ports:
-      - "${WEB_PORT:-8090}:80"
+    expose:
+      - "80"
     depends_on:
       - api
   api:

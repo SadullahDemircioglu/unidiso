@@ -1,0 +1,6 @@
+# Yalnızca yerel geliştirme: docker compose up otomatik okur.
+# Dokploy bu dosyayı kullanmaz (host portu Traefik ile çakışır).
+services:
+  web:
+    ports:
+      - "${WEB_PORT:-8090}:80"
