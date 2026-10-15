@@ -6,7 +6,7 @@
   "paths": {
     "home": "/en/",
     "products": "/en/products/",
-    "contact": "/en/contact.html",
+    "contact": "/en/contact",
     "other_lang": "/",
     "other_lang_label": "TR"
   },
@@ -466,7 +466,7 @@
       },
       {
         "label": "Contact",
-        "href": "/en/contact.html"
+        "href": "/en/contact"
       }
     ],
     "contact": {

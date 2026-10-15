@@ -6,7 +6,7 @@
   "paths": {
     "home": "/",
     "products": "/urunler/",
-    "contact": "/iletisim.html",
+    "contact": "/iletisim",
     "other_lang": "/en/",
     "other_lang_label": "EN"
   },
@@ -466,7 +466,7 @@
       },
       {
         "label": "İletişim",
-        "href": "/iletisim.html"
+        "href": "/iletisim"
       }
     ],
     "contact": {

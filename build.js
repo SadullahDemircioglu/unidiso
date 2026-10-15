@@ -180,7 +180,7 @@ function nav(current = '') {
 const ok = v => v != null && String(v).trim() !== '' && !/^TODO/i.test(String(v).trim());
 function footer() {
   const S = SITE, F = S.footer, P = S.paths, c = F.contact;
-  const prods = S.products.map(p => `<li><a href="${P.products}${p.slug}.html">${e(p.name)}</a></li>`).join('');
+  const prods = S.products.map(p => `<li><a href="${P.products}${p.slug}">${e(p.name)}</a></li>`).join('');
   const comp = F.company_links.map(l => `<li><a href="${l.href}">${e(l.label)}</a></li>`).join('');
   return `<footer class="footer">
   <div class="container">
@@ -214,7 +214,7 @@ function pageHome() {
   const cards = S.products.map((p, idx) => {
     const cls = (p.featured ? 'product featured' : 'product') + ' reveal-3d';
     const inner = p.featured ? frame(p, true) : '';
-    return `<a class="${cls}" style="--i:${idx}" href="${P.products}${p.slug}.html">
+    return `<a class="${cls}" style="--i:${idx}" href="${P.products}${p.slug}">
   <span class="product-icon">${ICONS[p.icon]}</span>
   <span class="tag">${e(p.tag)}</span>
   <h3>${e(p.name)}</h3>
@@ -235,7 +235,7 @@ function pageHome() {
   const logos = logoItems.map(u => `<span class="uni">${e(u)}</span>`).join('');
   const anchors = LANG === 'tr' ? ['urunler', 'neden'] : ['products', 'why'];
   const chips = (H.chips || []).map((c, i) => `<div class="chip chip-${i+1}"><span class="dot">${ICONS[c.icon]}</span><span><b>${e(c.b)}</b><small>${e(c.s)}</small></span></div>`).join('');
-  const ecoList = S.products.map(p => `<a href="${P.products}${p.slug}.html" data-slug="${p.slug}"><span class="product-icon">${ICONS[p.icon]}</span>${e(p.name)}</a>`).join('');
+  const ecoList = S.products.map(p => `<a href="${P.products}${p.slug}" data-slug="${p.slug}"><span class="product-icon">${ICONS[p.icon]}</span>${e(p.name)}</a>`).join('');
   return head(`${S.name} — ${S.tagline}`, S.meta_desc) + nav() + `
 <main>
 <section class="hero">
@@ -313,7 +313,7 @@ ${ok(S.quote.text) && ok(S.quote.name) ? `<section class="section band-light">
 function pageProduct(p) {
   const S = SITE, P = S.paths, U = S.ui;
   const feats = p.features.map((f, k) => `<div class="feature reveal reveal-3d" style="--i:${k}"><span class="product-icon">${ICONS[p.icon]}</span><h3>${e(f.title)}</h3><p>${e(f.text)}</p></div>`).join('');
-  const others = S.products.filter(o => o.slug !== p.slug).map(o => `<a href="${P.products}${o.slug}.html"><span class="product-icon">${ICONS[o.icon]}</span>${e(o.name)}</a>`).join('');
+  const others = S.products.filter(o => o.slug !== p.slug).map(o => `<a href="${P.products}${o.slug}"><span class="product-icon">${ICONS[o.icon]}</span>${e(o.name)}</a>`).join('');
   const bullets = (p.detail.bullets || []).filter(ok).map(b => `<li>${e(b)}</li>`).join("");
   const contactQ = `${P.contact}?product=${p.slug}`;
   return head(`${p.name} — ${S.name}`, p.short) + nav('products') + `
