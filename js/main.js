@@ -114,7 +114,7 @@
       payload.lang = lang;
       var labels = {};
       form.querySelectorAll('label[for]').forEach(function (l) { var i = document.getElementById(l.getAttribute('for')); if (i) labels[i.name] = l.textContent; });
-      Object.keys(payload).forEach(function (k) { if (payload[k] && k !== 'website' && k !== 'lang') lines.push((labels[k] || k) + ': ' + payload[k]); });
+      Object.keys(payload).forEach(function (k) { if (payload[k] && k !== 'website' && k !== 'lang' && k !== 'cf-turnstile-response') lines.push((labels[k] || k) + ': ' + payload[k]); });
       var subject = lang === 'en' ? 'Demo request — Unidiso' : 'Demo talebi — Unidiso';
       var fallback = function () {
         if (to) window.location.href = 'mailto:' + to + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(lines.join('\n'));
@@ -128,6 +128,7 @@
         .then(function (j) { if (!j.ok) throw new Error('fail'); form.classList.add('is-sent'); })
         .catch(function (err) {
           btn.disabled = false;
+          if (window.turnstile) try { window.turnstile.reset(); } catch (_) {}
           // API yoksa (404) e-posta istemcisine düş; sunucu hatasında uyarı göster
           if (err === 404) return fallback();
           form.classList.add('is-error');

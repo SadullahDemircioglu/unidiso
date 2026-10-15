@@ -10,7 +10,8 @@ const {
   SMTP_HOST, SMTP_PORT = '587', SMTP_SECURE = 'false', SMTP_USER, SMTP_PASS,
   MAIL_TO = 'info@unidiso.com', MAIL_FROM,
   TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID, SLACK_WEBHOOK_URL,
-  ALLOWED_ORIGIN = '*'
+  ALLOWED_ORIGIN = '*',
+  TURNSTILE_SECRET
 } = process.env;
 
 const app = express();
@@ -45,6 +46,22 @@ const transporter = SMTP_HOST ? nodemailer.createTransport({
 const clean = (v, max = 500) => String(v ?? '').replace(/[\r\n]+/g, ' ').trim().slice(0, max);
 const esc = s => s.replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
+// Cloudflare Turnstile doğrulaması (TURNSTILE_SECRET tanımlıysa zorunlu)
+async function captchaOk(token, ip) {
+  if (!TURNSTILE_SECRET) return true;
+  if (!token || typeof token !== 'string' || token.length > 2048) return false;
+  try {
+    const r = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+      method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({ secret: TURNSTILE_SECRET, response: token, remoteip: ip || '' }),
+      signal: AbortSignal.timeout(8000)
+    });
+    const j = await r.json();
+    if (!j.success) console.warn('[captcha] reddedildi:', (j['error-codes'] || []).join(','));
+    return j.success === true;
+  } catch (e) { console.error('[captcha] doğrulama hatası:', e.message); return false; }
+}
+
 app.get('/api/health', (_req, res) => res.json({ ok: true, mail: !!transporter }));
 
 app.post('/api/demo', async (req, res) => {
@@ -54,6 +71,8 @@ app.post('/api/demo', async (req, res) => {
   const b = req.body || {};
   // Honeypot: gerçek kullanıcı bu alanı doldurmaz
   if (b.website) return res.json({ ok: true });
+
+  if (!(await captchaOk(b['cf-turnstile-response'], ip))) return res.status(400).json({ ok: false, error: 'captcha' });
 
   const name = clean(b.name, 120), email = clean(b.email, 160), org = clean(b.org, 160),
         role = clean(b.role, 120), product = clean(b.product, 80), lang = clean(b.lang, 5) || 'tr';
@@ -103,4 +122,4 @@ ${[['Ad Soyad', name], ['E-posta', email], ['Kurum', org], ['Görev', role || '-
 });
 
 app.use((_req, res) => res.status(404).json({ ok: false }));
-app.listen(PORT, () => console.log(`unidiso-api :${PORT} (mail: ${transporter ? SMTP_HOST : 'kapalı'})`));
+app.listen(PORT, () => console.log(`unidiso-api :${PORT} (mail: ${transporter ? SMTP_HOST : 'kapalı'}, captcha: ${TURNSTILE_SECRET ? 'açık' : 'kapalı'})`));

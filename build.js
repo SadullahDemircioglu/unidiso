@@ -177,6 +177,9 @@ function nav(current = '') {
 </header>`;
 }
 
+// Cloudflare Turnstile site key (herkese açık, gizli değil). Yerelde test için
+// "her zaman geçer" anahtarı: TURNSTILE_SITEKEY=1x00000000000000000000AA node build.js
+const TURNSTILE_SITEKEY = process.env.TURNSTILE_SITEKEY || '0x4AAAAAAFX27_Rqk1g9-T-5';
 const ok = v => v != null && String(v).trim() !== '' && !/^TODO/i.test(String(v).trim());
 function footer() {
   const S = SITE, F = S.footer, P = S.paths, c = F.contact;
@@ -395,9 +398,11 @@ function pageContact() {
         </div>
         <div class="field"><label for="f-product">${F.product}</label><select id="f-product" name="product">${opts}</select></div>
         <div class="field"><label for="f-msg">${F.message}</label><textarea id="f-msg" name="message"></textarea></div>
+        <div class="cf-turnstile" data-sitekey="${TURNSTILE_SITEKEY}" data-language="${LANG}" data-theme="auto"></div>
         <button class="btn btn-primary" type="submit">${F.submit}</button>
         <p class="form-note">${e(F.note)}</p>
       </div>
+      <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
       <p class="form-success">${e(F.success)}</p>
       <p class="form-error">${e(F.error || (LANG === "tr" ? "Gönderilemedi. Lütfen tekrar deneyin ya da bize e-posta gönderin." : "Could not send. Please try again or email us."))}</p>
     </form>
