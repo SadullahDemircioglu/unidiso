@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Demo talep edin — Unidiso</title>
+<meta name="description" content="Formu doldurun; bir iş günü içinde dönüş yapıp demo için uygun bir saat belirleyelim.">
+<meta property="og:title" content="Demo talep edin — Unidiso">
+<meta property="og:description" content="Formu doldurun; bir iş günü içinde dönüş yapıp demo için uygun bir saat belirleyelim.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/svg+xml" href="/assets/img/logos/ikon-teal.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logos/favicon-32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/effects.css">
+<link rel="stylesheet" href="/css/depth.css">
+</head>
+<body><header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="/" aria-label="Unidiso"><svg viewBox="0 0 60 60" aria-hidden="true"><rect x="0" y="0" width="27" height="27" rx="3" fill="currentColor"/><rect x="33" y="0" width="27" height="27" rx="3" fill="currentColor"/><rect x="0" y="33" width="27" height="27" rx="3" fill="currentColor"/><circle cx="46.5" cy="46.5" r="13.5" fill="#5EEAD4"/></svg><span class="brand-name">Unidiso</span></a>
+    <nav aria-label="Ürünler"><ul class="nav-links"><li><a href="/#urunler">Ürünler</a></li><li><a href="/#neden">Neden Unidiso</a></li><li><a href="/iletisim.html" aria-current="page">İletişim</a></li></ul></nav>
+    <div class="nav-cta">
+      <a class="lang" href="/en/" hreflang="en">EN</a>
+      <a class="btn btn-primary" href="/iletisim.html">Demo talep et</a>
+      <button class="nav-toggle" aria-label="Menü" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<main>
+<section class="page-hero"><div class="grid-bg"></div><div class="aurora"><i class="beam-1"></i><i class="beam-2"></i><i class="glow"></i></div><div class="grain"></div><div class="container"><h1>Demo talep edin</h1><p class="lead">Formu doldurun; bir iş günü içinde dönüş yapıp demo için uygun bir saat belirleyelim.</p></div></section>
+<section class="section band-light">
+  <div class="container contact">
+    <div class="contact-info">
+      <h2>Unidiso</h2>
+      <p>Üniversiteler için ERP, planlama, performans ve destek yönetimi çözümleri.</p>
+      <dl>
+        <div><dt>E-posta</dt><dd><a href="mailto:info@unidiso.com">info@unidiso.com</a></dd></div>
+        <div><dt>Telefon</dt><dd><a href="tel:+905322046115">+90 532 204 61 15</a></dd></div>
+        <div><dt>Adres</dt><dd>Maslak Mahallesi, Taşyoncası Sokak, No: 1V ve No: 1Y, Bina Kodu: 34481742, 34398 Sarıyer / İstanbul<br><a class="map-link" href="https://maps.app.goo.gl/GTt2htcKrHmXSpKR7" target="_blank" rel="noopener">Google Haritalar'da aç ↗</a></dd></div>
+      </dl>
+    </div>
+    <form class="form" data-to="info@unidiso.com" data-endpoint="/api/demo" novalidate>
+      <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0">
+      <div class="form-fields" style="display:grid;gap:14px">
+        <div class="form-row">
+          <div class="field" data-required><label for="f-name">Ad Soyad</label><input id="f-name" name="name" type="text" autocomplete="name"><span class="err">Bu alan zorunlu</span></div>
+          <div class="field" data-required><label for="f-email">Kurumsal e-posta</label><input id="f-email" name="email" type="email" autocomplete="email"><span class="err">Bu alan zorunlu</span></div>
+        </div>
+        <div class="form-row">
+          <div class="field" data-required><label for="f-org">Üniversite / Kurum</label><input id="f-org" name="org" type="text" autocomplete="organization"><span class="err">Bu alan zorunlu</span></div>
+          <div class="field"><label for="f-role">Göreviniz</label><input id="f-role" name="role" type="text" autocomplete="organization-title"></div>
+        </div>
+        <div class="field"><label for="f-product">İlgilendiğiniz ürün</label><select id="f-product" name="product"><option value="">Henüz karar vermedim</option><option value="erp">SERP</option><option value="d-plan">D-plan</option><option value="ascore">A-Score</option><option value="crm">CRM – Kampanya Yönetimi</option><option value="ticket">Ticket Management</option><option value="personel-verimliligi">Akademik Personel Verimliliği</option><option value="derslik-verimliligi">Derslik Verimliliği</option></select></div>
+        <div class="field"><label for="f-msg">Mesajınız</label><textarea id="f-msg" name="message"></textarea></div>
+        <button class="btn btn-primary" type="submit">Demo talep et</button>
+        <p class="form-note">Bilgileriniz yalnızca demo planlaması için kullanılır.</p>
+      </div>
+      <p class="form-success">Talebiniz alındı. Bir iş günü içinde size dönüş yapacağız.</p>
+      <p class="form-error">Gönderilemedi. Lütfen tekrar deneyin ya da bize e-posta gönderin.</p>
+    </form>
+  </div>
+</section>
+<section class="map-sec band-white">
+  <div class="container">
+    <div class="map-wrap reveal">
+      <iframe title="Unidiso — Adres" src="https://www.google.com/maps?q=41.119407,29.009687&z=16&hl=tr&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      <div class="map-card">
+        <b>Unidiso</b>
+        <span>Maslak Mahallesi, Taşyoncası Sokak, No: 1V ve No: 1Y, Bina Kodu: 34481742, 34398 Sarıyer / İstanbul</span>
+        <div class="map-actions"><a class="btn btn-primary" href="https://www.google.com/maps/dir/?api=1&destination=41.119407,29.009687" target="_blank" rel="noopener">Yol tarifi al</a><a class="btn btn-ghost" href="https://maps.app.goo.gl/GTt2htcKrHmXSpKR7" target="_blank" rel="noopener">Google Haritalar'da aç</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<script>
+(function(){var q=new URLSearchParams(location.search).get('product');var s=document.getElementById('f-product');if(q&&s){s.value=q;}})();
+</script>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="/"><svg viewBox="0 0 60 60" aria-hidden="true"><rect x="0" y="0" width="27" height="27" rx="3" fill="currentColor"/><rect x="33" y="0" width="27" height="27" rx="3" fill="currentColor"/><rect x="0" y="33" width="27" height="27" rx="3" fill="currentColor"/><circle cx="46.5" cy="46.5" r="13.5" fill="#5EEAD4"/></svg><span class="brand-name">Unidiso<small class="brand-tag">University Digital Solutions</small></span></a>
+        <p>Üniversiteler için ERP, planlama, performans ve destek yönetimi çözümleri.</p>
+      </div>
+      <div><h4>Ürünler</h4><ul><li><a href="/urunler/erp.html">SERP</a></li><li><a href="/urunler/d-plan.html">D-plan</a></li><li><a href="/urunler/ascore.html">A-Score</a></li><li><a href="/urunler/crm.html">CRM – Kampanya Yönetimi</a></li><li><a href="/urunler/ticket.html">Ticket Management</a></li><li><a href="/urunler/personel-verimliligi.html">Akademik Personel Verimliliği</a></li><li><a href="/urunler/derslik-verimliligi.html">Derslik Verimliliği</a></li></ul></div>
+      <div><h4>Şirket</h4><ul><li><a href="/#neden">Neden Unidiso</a></li><li><a href="/iletisim.html">İletişim</a></li></ul></div>
+      <div><h4>İletişim</h4><ul>
+        <li><a href="mailto:info@unidiso.com">info@unidiso.com</a></li>
+        <li><a href="tel:+905322046115">+90 532 204 61 15</a></li>
+        <li>Maslak Mah. Taşyoncası Sk. No: 1V – 1Y, 34398 Sarıyer / İstanbul</li>
+        
+      </ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Unidiso. Tüm hakları saklıdır.</span><a class="lang" href="/en/">English</a></div>
+  </div>
+</footer>
+<script src="/js/main.js" defer></script>
+<script src="/js/depth.js" defer></script>
+</body>
+</html>

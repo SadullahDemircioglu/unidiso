@@ -1,0 +1,13 @@
+.git
+.idea
+.DS_Store
+node_modules
+assets/img/ascore
+assets/img/aday-crm
+assets/img/univerp-prod
+assets/img/univerp-screens
+assets/img/univerp-verimlilik
+assets/img/unidiso-logo
+api/node_modules
+api/.env
+.env

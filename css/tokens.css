@@ -1,0 +1,50 @@
+/* Unidiso — tasarım tokenları
+   İskelet: Huly (koyu hero + aurora, dönüşümlü bantlar, pill kontroller)
+   Kimlik: Unidiso logo sistemi (teal, modül ızgarası, Source Serif 4) */
+:root {
+  /* Marka */
+  --ink: #0F1F1D;        /* metin, koyu yüzey */
+  --deep: #0B1F1D;       /* hero / koyu bant zemini */
+  --deep-2: #10302C;     /* koyu kart yüzeyi */
+  --teal: #0F766E;       /* birincil aksiyon */
+  --teal-700: #0B5C56;   /* hover */
+  --mint: #5EEAD4;       /* aurora, nokta, koyu zeminde vurgu */
+  --mint-soft: #B7F3E9;
+
+  /* Nötrler (yeşile kayan, sıcak krem değil) */
+  --paper: #F3F7F6;      /* açık bant zemini */
+  --paper-2: #E6EEEC;    /* ikincil açık yüzey */
+  --white: #FFFFFF;
+  --line: #D6E1DE;       /* açık zeminde çizgi */
+  --line-dark: rgba(255,255,255,.12);
+  --muted: #5B6B68;      /* ikincil metin (açık) */
+  --muted-dark: #9FB3AF; /* ikincil metin (koyu) */
+
+  /* Tipografi */
+  --font-display: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+  --font-body: 'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --text-xs: 0.8125rem;   /* 13 */
+  --text-sm: 0.9375rem;   /* 15 */
+  --text-md: 1.0625rem;   /* 17 */
+  --text-lg: 1.25rem;     /* 20 */
+  --text-xl: 1.625rem;    /* 26 */
+  --text-2xl: 2.125rem;   /* 34 */
+  --text-3xl: 2.875rem;   /* 46 */
+  --text-display: clamp(2.75rem, 6.2vw, 5rem);
+
+  /* Boşluk ve şekil */
+  --container: 1200px;
+  --gutter: clamp(16px, 4vw, 40px);
+  --section: clamp(72px, 9vw, 120px);
+  --radius-card: 14px;
+  --radius-panel: 28px;
+  --radius-pill: 9999px;
+  --radius-input: 8px;
+
+  /* Gölge: yalnız yüzen ürün çerçevesi */
+  --shadow-frame: 0 30px 80px rgba(5, 20, 18, .55), 0 2px 0 rgba(255,255,255,.06) inset;
+
+  /* Hareket */
+  --ease: cubic-bezier(.22,.61,.36,1);
+  --dur: 220ms;
+}

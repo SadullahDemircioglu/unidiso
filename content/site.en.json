@@ -1,0 +1,522 @@
+{
+  "lang": "en",
+  "name": "Unidiso",
+  "tagline": "Every solution a university needs, in one place.",
+  "meta_desc": "Unidiso builds the digital backbone of universities: ERP, timetabling, academic performance, CRM, ticketing and efficiency analytics.",
+  "paths": {
+    "home": "/en/",
+    "products": "/en/products/",
+    "contact": "/en/contact.html",
+    "other_lang": "/",
+    "other_lang_label": "TR"
+  },
+  "nav": {
+    "products": "Products",
+    "about": "Why Unidiso",
+    "contact": "Contact",
+    "demo": "Request a demo"
+  },
+  "hero": {
+    "title": "Every solution a university needs, in one place.",
+    "lead": "From timetabling to academic performance, from resource planning to support requests — build your campus's digital backbone with products that talk to each other.",
+    "primary": "Request a demo",
+    "secondary": "Explore products",
+    "note": "Each product is sold separately; they work together.",
+    "chips": [
+      {
+        "icon": "ticket",
+        "b": "New ticket #4821",
+        "s": "Wi-Fi access · assigned to IT"
+      },
+      {
+        "icon": "calendar",
+        "b": "Fall timetable published",
+        "s": "0 clashes · 214 rooms"
+      },
+      {
+        "icon": "chart",
+        "b": "Ascore updated",
+        "s": "Engineering · +3 pts"
+      }
+    ]
+  },
+  "logos": {
+    "label": "Used by universities in Türkiye",
+    "items": [
+      "TODO: University name"
+    ]
+  },
+  "products_head": {
+    "title": "One product for every part of campus",
+    "lead": "Start with the module you need; add others as they become necessary. All products share the same data model."
+  },
+  "products": [
+    {
+      "slug": "erp",
+      "icon": "grid",
+      "name": "SERP",
+      "tag": "Smart Enterprise Resource Planning",
+      "featured": true,
+      "short": "Simplified enterprise resource planning shaped by the needs of a real university. Procurement, budget, meetings, events and reporting in one system that needs no technical background.",
+      "page_title": "An ERP designed for universities, usable by everyone",
+      "lead": "When general-purpose ERP systems are adapted to a university, the result is heavy, complex screens that staff avoid. SERP took the opposite route: it was shaped inside a real university's daily operation, one process at a time. Unnecessary detail was removed; from procurement to budget, meeting management to event planning, every process runs on simple screens that anyone from the rectorate to a department secretary can use from day one.",
+      "features": [
+        {
+          "title": "Procurement and supplier management",
+          "text": "Requests, approvals, supplier records and order tracking end to end. Every step is recorded, every approval sits with the authorised role."
+        },
+        {
+          "title": "Budget management",
+          "text": "Budget planning by unit and line item; spending matches budget lines and deviations are visible immediately."
+        },
+        {
+          "title": "Meeting management",
+          "text": "Agenda, attendees, decisions and action items in one place. Decisions are assigned to an owner and followed until closed."
+        },
+        {
+          "title": "Event planning",
+          "text": "Institutional events planned with venue, resource and calendar management, linked to budget."
+        },
+        {
+          "title": "Management dashboard and reporting",
+          "text": "Summary indicators by faculty and unit at a glance. Any report, in any format, at any interval."
+        },
+        {
+          "title": "Open integration",
+          "text": "Connects to the student information system, accounting, e-signature and every other external system the institution already uses."
+        }
+      ],
+      "detail": {
+        "title": "Fast to roll out, faster to adopt",
+        "text": "Most ERP projects fail not because of the software but because staff never move onto it. Because SERP's screens are simple, the entire staff switches over after a short training and processes run through the system from the first week. A high-performance infrastructure means no waiting even in peak periods.",
+        "bullets": [
+          "A simple, role-based interface the whole staff adopts quickly",
+          "Scalable infrastructure that stays fast in peak periods",
+          "Reports produced instantly, exactly the way management wants them",
+          "Two-way, open integration with existing systems"
+        ]
+      },
+      "screens": [
+        "Module panel — every process on one screen",
+        "Warehouse and stock management",
+        "Location and campus definitions"
+      ]
+    },
+    {
+      "slug": "d-plan",
+      "icon": "calendar",
+      "name": "D-plan",
+      "tag": "Timetable planning",
+      "short": "Builds the term and annual timetable fully automatically. Room, lecturer and course data arrive once via integration; a month of planning shrinks to three days.",
+      "page_title": "The timetable, fully automatic",
+      "lead": "Timetable preparation — weeks of work at the start of every term, running through spreadsheets and email threads — is one of the processes where universities lose the most time. D-plan makes it fully automatic within the rules the institution defines. Room, lecturer and course data are pulled once from institutional systems through integration; the planner enters no data and only reviews and publishes the result.",
+      "features": [
+        {
+          "title": "Fully automatic planning",
+          "text": "The entire term or annual timetable is generated by the system within the defined constraints; per department or for the whole university in one run."
+        },
+        {
+          "title": "Integrated data, zero manual entry",
+          "text": "Rooms, lecturers, courses and student groups come automatically from the student information system. Nothing is re-uploaded each term."
+        },
+        {
+          "title": "Rule-based constraints",
+          "text": "Room capacity and equipment, lecturer availability, building/campus distance and the institution's own rules are part of the plan."
+        },
+        {
+          "title": "Clash-free result",
+          "text": "Lecturer, room and student-group clashes are prevented while the plan is generated; no corrections afterwards."
+        },
+        {
+          "title": "Room availability and floor-plan view",
+          "text": "Which room is busy on which day and hour, and which is free — as a list and on the building floor plan."
+        },
+        {
+          "title": "Publish to any system",
+          "text": "The generated timetable is sent in one step, via open integration, to the student portal, lecturer portal, SIS and calendar apps."
+        }
+      ],
+      "detail": {
+        "title": "A month of planning, down to three days",
+        "text": "At the university using D-plan, term planning that previously took about a month dropped first to a week and then to three days. The timetable is live today in student and lecturer portals; lecturer availability and room data are pulled from the system automatically every term.",
+        "bullets": [
+          "Planning time went from one month to three days",
+          "Data is pulled once via integration, never re-entered each term",
+          "Clashes are prevented during generation; nothing to fix afterwards",
+          "Output is delivered to any system, including student and lecturer portals"
+        ]
+      },
+      "screens": [
+        "Automatically generated weekly timetable",
+        "Floor plan: room occupancy map",
+        "Free rooms — weekly availability"
+      ]
+    },
+    {
+      "slug": "ascore",
+      "icon": "chart",
+      "name": "A-Score",
+      "tag": "Academic performance",
+      "short": "Collects YÖK Akademik, Scopus and TR Dizin data automatically and turns each academic's real academic value into a measurable score using the institution's own criteria.",
+      "page_title": "Make academic performance measurable",
+      "lead": "An academic's value sits scattered across sources — publications in YÖK Akademik, citations in Scopus, national work in TR Dizin. Collecting it by hand takes weeks and sparks a dispute every time. A-Score gathers the data from these sources for every academic automatically, matches it and turns it into a single performance score using the institution's criteria. The data layer is extensible: Web of Science or Google Scholar can be added tomorrow.",
+      "features": [
+        {
+          "title": "Multi-source, automatic data",
+          "text": "Articles, proceedings, books, thesis supervisions and citations are pulled from YÖK Akademik, Scopus and TR Dizin; cross-source matches (YÖK–Scopus, Scopus–TR Dizin) are detected."
+        },
+        {
+          "title": "Institution-specific performance score",
+          "text": "Parameters such as publications, citations, seminars and teaching load are scored on target-versus-actual with the percentage weights the institution sets."
+        },
+        {
+          "title": "Flexible criteria management",
+          "text": "Administrators add new criteria and set their weight; the calculation updates immediately. Each faculty can use its own criteria set."
+        },
+        {
+          "title": "Comparison",
+          "text": "See two academics, departments or faculties side by side by publications, citations and year."
+        },
+        {
+          "title": "Faculty and university reports",
+          "text": "Publication distribution, yearly trends and performance summaries at faculty/department and university level as ready reports."
+        },
+        {
+          "title": "Academic profile",
+          "text": "Every academic can review their publications, yearly distribution and performance grade in their own profile."
+        }
+      ],
+      "detail": {
+        "title": "An indicator of real academic value",
+        "text": "Rectorate, deans and department heads see each academic's value based on data, not estimates; appointment, promotion and incentive decisions rest on a transparent calculation. Academics follow where their score comes from and which criteria they are missing in their own profile.",
+        "bullets": [
+          "Publication and citation data is never collected by hand; it is pulled and matched automatically",
+          "Criteria and weights belong to the institution; the calculation is transparent and traceable",
+          "A shared panel for rectorate, deans and department heads; a personal profile for each academic",
+          "An architecture that accepts new data sources"
+        ]
+      },
+      "screens": [
+        "Dashboard — publication trend by source",
+        "University report — publications by faculty",
+        "Performance calculation — institution-specific weights"
+      ]
+    },
+    {
+      "slug": "crm",
+      "icon": "megaphone",
+      "name": "CRM – Campaign Management",
+      "tag": "Prospective students and outreach",
+      "short": "Brings prospect data from every source into one place and runs enrolment and preference periods in a planned way through SMS, email, social media, call-centre, IVR and AI Voice campaigns.",
+      "page_title": "Run enrolment and preference periods from one place",
+      "lead": "During preference and enrolment periods, prospective-student data flows separately from web forms, external application platforms, fairs and the call centre; who was called and who received a message is often unclear. CRM – Campaign Management merges these scattered sources into a single prospect pool. Undergraduate, graduate, lateral-transfer, vertical-transfer, international and special-talent applications are tracked separately; prospects are grouped and a campaign is planned for each group on the right channel, with its result followed on the same screen.",
+      "features": [
+        {
+          "title": "One prospect pool",
+          "text": "Tens of thousands of prospect records from web forms, external application systems and outreach events in one pool; source and channel recorded on every entry."
+        },
+        {
+          "title": "Tracking by application type",
+          "text": "Undergraduate, graduate, lateral transfer, vertical transfer, international, special talent, workshop and campus-visit applications in separate flows, one panel."
+        },
+        {
+          "title": "Segmentation",
+          "text": "Prospects grouped by application type, programme interest, city and behaviour; a different message and channel for each group."
+        },
+        {
+          "title": "Multi-channel campaigns",
+          "text": "SMS, email and social-media campaigns planned and sent from one calendar."
+        },
+        {
+          "title": "Voice outreach and AI Voice",
+          "text": "Call-centre calls, IVR and AI-driven voice calls (AI Voice) managed within the same plan; every call is recorded."
+        },
+        {
+          "title": "Dashboard and conversion reports",
+          "text": "Total prospects, application-type breakdown, monthly application trend and prospects by programme at a glance; how many applications each channel brought is measured."
+        }
+      ],
+      "detail": {
+        "title": "Every channel, one plan",
+        "text": "Messaging, calling and social campaigns are planned on the same prospect data rather than in separate tools. No prospect is called twice, none is forgotten, and the return on the outreach budget is visible as a number.",
+        "bullets": [
+          "All prospect sources and application types in one system",
+          "SMS, email, social media, IVR, AI Voice and call centre from one plan",
+          "Measurable campaign management with monthly trends and channel-based conversion reports",
+          "Enrolled prospects are transferred to the student information system"
+        ]
+      },
+      "screens": [
+        "Dashboard — application type and source breakdown",
+        "Monthly application trend",
+        "Prospects by programme"
+      ]
+    },
+    {
+      "slug": "ticket",
+      "icon": "ticket",
+      "name": "Ticket Management",
+      "tag": "Request and support management",
+      "short": "Student or staff, whichever channel they use, every request lands in one system; the right unit answers, every request is followed until closed, and none is lost.",
+      "page_title": "No request gets lost",
+      "lead": "In a university, requests come from everywhere: a student writes through the portal, a lecturer sends an email, a parent phones, a staff member reaches out on WhatsApp. When each channel lands with a different person, requests are forgotten, the same problem is asked three times and nobody knows how many requests came in. Ticket Management collects requests about every process in the institution, from students and staff alike, in one queue; each request lands with the relevant unit, is assigned an owner and followed until closed.",
+      "features": [
+        {
+          "title": "Every channel into one queue",
+          "text": "Portal, email, mobile app, WhatsApp and phone all feed the same system; however the user reaches you, the request lands in the same place."
+        },
+        {
+          "title": "Students and staff, internal and external",
+          "text": "Students, lecturers, administrative staff and external stakeholders open requests from the same system; each sees the status of their own requests."
+        },
+        {
+          "title": "Unit-based handling",
+          "text": "Requests are routed to the relevant unit by category; unit users answer and, if needed, hand over to another unit."
+        },
+        {
+          "title": "Every process in the institution",
+          "text": "IT, student affairs, technical services, library, finance — whichever unit, the same flow."
+        },
+        {
+          "title": "Traceability and history",
+          "text": "Who handled each request, when and what was answered is recorded; a user's past requests on one screen."
+        },
+        {
+          "title": "Reporting",
+          "text": "Request volume, open/closed counts and resolution times by unit, category and period."
+        }
+      ],
+      "detail": {
+        "title": "Nobody's problem slips through",
+        "text": "Whatever channel a request arrives from, it is recorded, assigned to an owner and followed until it is closed. Management sees how many requests reach each unit and where they pile up; staffing and process decisions rest on data.",
+        "bullets": [
+          "Portal, email, mobile, WhatsApp and phone in one queue",
+          "Every request has an owner, a status and a history",
+          "All units of the institution in one system, one flow",
+          "Request volume and resolution reports by unit"
+        ]
+      },
+      "screens": [
+        "Request list — one queue",
+        "Monthly request trend"
+      ]
+    },
+    {
+      "slug": "staff-efficiency",
+      "icon": "users",
+      "name": "Academic Staff Efficiency",
+      "tag": "Analytics",
+      "short": "Proves academic staff's internal efficiency with ratios — courses taught, teaching capacity and coverage rates per course — and compares faculties and departments.",
+      "page_title": "Academic staff efficiency, in ratios",
+      "lead": "This product is different from A-Score: it measures internal performance, not publications and citations. How many courses does a lecturer teach, how many could they teach, how much of each course was delivered, where do they stand in internal evaluations? Academic Staff Efficiency answers these questions with data pulled from the timetable and institutional sources — based on ratios, not estimates.",
+      "features": [
+        {
+          "title": "Teaching load and capacity",
+          "text": "Courses taught compared with courses that could be taught; lecturers at full capacity and those with room are visible."
+        },
+        {
+          "title": "Course coverage",
+          "text": "How much of each course's planned syllabus has been delivered, as a percentage; gaps are spotted before the term ends."
+        },
+        {
+          "title": "Internal evaluation criteria",
+          "text": "The institution's evaluation criteria and weights enter the calculation; different criteria sets can be defined per faculty."
+        },
+        {
+          "title": "Faculty and department view",
+          "text": "Overall evaluation summary, criteria distribution by faculty, highest- and lowest-performing lecturers."
+        },
+        {
+          "title": "Lecturer list",
+          "text": "Each lecturer's teaching load, coverage rate and evaluation score in one sortable, filterable table."
+        },
+        {
+          "title": "Integrated and open data",
+          "text": "Data pulled automatically from the timetable (D-plan) and the student information system; integration with any system."
+        }
+      ],
+      "detail": {
+        "title": "Proves performance with ratios",
+        "text": "Whose capacity is full, where there is room, which courses fall short on coverage — deans and department heads make course-distribution and staffing decisions with data. The evaluation conversation with a lecturer rests on numbers, not argument.",
+        "bullets": [
+          "Automatic data from the timetable and institutional sources; no manual entry",
+          "Teaching load, capacity and coverage rate calculated in one place",
+          "Comparable, provable ratios by faculty and department",
+          "Used with A-Score, academic and internal performance sit on the same panel"
+        ]
+      },
+      "screens": [
+        "Evaluation summary — load ratio and composite score",
+        "Course coverage — lecturer and section distribution",
+        "Faculty-based criteria"
+      ]
+    },
+    {
+      "slug": "room-efficiency",
+      "icon": "door",
+      "name": "Classroom Efficiency",
+      "tag": "Analytics",
+      "short": "Who is in which room, when it should open, how many students will come, how many desks there are — makes classroom use manageable and delivers measurable savings in space and energy.",
+      "page_title": "Make the classroom manageable",
+      "lead": "One of an institution's biggest and least visible problems is classroom use: which lecturer is in which room, when should the room open, how many students will come, how many desks and what equipment are there? When these questions go unanswered, classes run in large rooms with few students, empty rooms are heated, and the case for a new building is built on a problem that may not exist. Classroom Efficiency answers all of these on one screen, on the building floor plan.",
+      "features": [
+        {
+          "title": "Room–course–lecturer matching",
+          "text": "Which lecturer, in which room, on which day and hour; automatic from D-plan timetable data."
+        },
+        {
+          "title": "Capacity fit",
+          "text": "Expected student numbers compared with the room's desks and equipment; large rooms for small classes and small rooms for large classes are flagged."
+        },
+        {
+          "title": "Opening and usage hours",
+          "text": "When each room opens, how long it is used and when it stands empty is clear."
+        },
+        {
+          "title": "Sensor support",
+          "text": "Sensors in classrooms feed real usage data into the system; the gap between planned and actual use becomes visible."
+        },
+        {
+          "title": "Floor plan and availability map",
+          "text": "Rooms on the building floor plan together with occupancy; the weekly availability table at a glance."
+        },
+        {
+          "title": "Building and campus summary",
+          "text": "Classroom efficiency reported at building, faculty and campus level as a basis for investment decisions."
+        }
+      ],
+      "detail": {
+        "title": "Economic and spatial gains",
+        "text": "Once room details are manageable, idle space and unnecessary opening hours disappear. Heating, lighting and cleaning costs fall, and because existing space is used better, the need for new classrooms is judged on data.",
+        "bullets": [
+          "Room, lecturer, student numbers and equipment on one screen",
+          "Planned-versus-actual usage with sensors",
+          "Measurable savings in space and energy cost",
+          "With D-plan: efficiency findings feed the next term's plan"
+        ]
+      },
+      "screens": [
+        "Rooms free right now — weekly availability",
+        "Floor plan: occupancy on the building plan",
+        "Weekly timetable view"
+      ]
+    }
+  ],
+  "why": {
+    "title": "Why Unidiso",
+    "lead": "Products written for university processes, that talk to each other.",
+    "items": [
+      {
+        "title": "Built for universities",
+        "text": "We don't adapt general-purpose software. Faculties, departments, terms and regulatory processes come built in."
+      },
+      {
+        "title": "Bought separately, work together",
+        "text": "Start with D-plan alone. Every product added later uses the same data; there is no re-entry."
+      },
+      {
+        "title": "With you after go-live",
+        "text": "At term start, incentive season and audit weeks our team works alongside yours."
+      }
+    ]
+  },
+  "metrics": {
+    "title": "In numbers",
+    "items": [
+      {
+        "value": "7",
+        "label": "integrated products"
+      },
+      {
+        "value": "TODO",
+        "label": "class hours scheduled"
+      },
+      {
+        "value": "TODO",
+        "label": "academics evaluated"
+      },
+      {
+        "value": "TODO",
+        "label": "support requests resolved"
+      }
+    ]
+  },
+  "quote": {
+    "text": "TODO: Reference quote. Our term planning took two days instead of weeks; room clashes dropped to zero.",
+    "name": "TODO: Name Surname",
+    "role": "TODO: Title, University"
+  },
+  "cta": {
+    "title": "Which product should your institution start with?",
+    "text": "In a 30-minute demo we listen to your processes and recommend the right combination.",
+    "primary": "Request a demo",
+    "secondary": "Contact us"
+  },
+  "footer": {
+    "about": "ERP, planning, performance and support solutions for universities.",
+    "cols": {
+      "products": "Products",
+      "company": "Company",
+      "contact": "Contact"
+    },
+    "company_links": [
+      {
+        "label": "Why Unidiso",
+        "href": "/en/#why"
+      },
+      {
+        "label": "Contact",
+        "href": "/en/contact.html"
+      }
+    ],
+    "contact": {
+      "email": "info@unidiso.com",
+      "phone": "+90 532 204 61 15",
+      "address": "Maslak Mah. Taşyoncası Sk. No: 1V – 1Y, 34398 Sarıyer / İstanbul",
+      "linkedin": "TODO: https://linkedin.com/company/...",
+      "address_full": "Maslak Mahallesi, Taşyoncası Sokak, No: 1V ve No: 1Y, Bina Kodu: 34481742, 34398 Sarıyer / İstanbul",
+      "map_url": "https://maps.app.goo.gl/GTt2htcKrHmXSpKR7",
+      "lat": 41.119407,
+      "lng": 29.009687
+    },
+    "copyright": "Unidiso. All rights reserved."
+  },
+  "contact": {
+    "title": "Request a demo",
+    "lead": "Fill in the form; we'll get back within one business day to set a time.",
+    "form_to": "info@unidiso.com",
+    "fields": {
+      "name": "Full name",
+      "email": "Work email",
+      "org": "University / Institution",
+      "role": "Your role",
+      "product": "Product of interest",
+      "any": "Not sure yet",
+      "message": "Message",
+      "submit": "Request a demo",
+      "required": "This field is required",
+      "note": "Your details are used only to schedule the demo.",
+      "success": "Request received. We'll get back to you within one business day."
+    },
+    "info": {
+      "email": "Email",
+      "phone": "Phone",
+      "address": "Address",
+      "map": "Open in Google Maps",
+      "directions": "Get directions"
+    }
+  },
+  "ui": {
+    "breadcrumb_products": "Products",
+    "features_title": "What it does",
+    "other_products": "Other products",
+    "product_cta": "Request a demo for this product",
+    "all_products": "All products",
+    "learn": "Explore product",
+    "lang_switch": "Türkçe"
+  },
+  "eco": {
+    "title": "Separate products, one dataset",
+    "lead": "Each product works on its own; installed together they share the same student, staff and room data. Enter it once, it updates everywhere."
+  }
+}

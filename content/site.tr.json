@@ -1,0 +1,522 @@
+{
+  "lang": "tr",
+  "name": "Unidiso",
+  "tagline": "Üniversiteler için tüm çözümler, tek noktada.",
+  "meta_desc": "Unidiso; ERP, ders planlama, akademisyen performansı, CRM, destek yönetimi ve verimlilik analitiği ile üniversitelerin dijital altyapısını kurar.",
+  "paths": {
+    "home": "/",
+    "products": "/urunler/",
+    "contact": "/iletisim.html",
+    "other_lang": "/en/",
+    "other_lang_label": "EN"
+  },
+  "nav": {
+    "products": "Ürünler",
+    "about": "Neden Unidiso",
+    "contact": "İletişim",
+    "demo": "Demo talep et"
+  },
+  "hero": {
+    "title": "Üniversiteler için tüm çözümler, tek noktada.",
+    "lead": "Ders planlamadan akademik performansa, kaynak yönetiminden destek taleplerine — kampüsünüzün dijital altyapısını birbiriyle konuşan ürünlerle kurun.",
+    "primary": "Demo talep et",
+    "secondary": "Ürünleri incele",
+    "note": "Her ürün ayrı satın alınabilir; birlikte çalışır.",
+    "chips": [
+      {
+        "icon": "ticket",
+        "b": "Yeni talep #4821",
+        "s": "Wi-Fi erişimi · BT'ye atandı"
+      },
+      {
+        "icon": "calendar",
+        "b": "Güz programı yayınlandı",
+        "s": "0 çakışma · 214 derslik"
+      },
+      {
+        "icon": "chart",
+        "b": "Ascore güncellendi",
+        "s": "Mühendislik Fak. · +3 puan"
+      }
+    ]
+  },
+  "logos": {
+    "label": "Türkiye'deki üniversitelerde kullanılıyor",
+    "items": [
+      "TODO: Üniversite adı"
+    ]
+  },
+  "products_head": {
+    "title": "Kampüsün her birimi için bir ürün",
+    "lead": "İhtiyacınız olan modülle başlayın; diğerlerini ihtiyaç doğdukça ekleyin. Tüm ürünler aynı veri modelini paylaşır."
+  },
+  "products": [
+    {
+      "slug": "erp",
+      "icon": "grid",
+      "name": "SERP",
+      "tag": "Smart Enterprise Resource Planning",
+      "featured": true,
+      "short": "Gerçek bir üniversitenin ihtiyaçlarıyla şekillenmiş, sadeleştirilmiş kurumsal kaynak planlama. Satın alma, bütçe, toplantı, etkinlik ve raporlama; teknik bilgi gerektirmeyen tek bir sistemde.",
+      "page_title": "Üniversite için tasarlanmış, herkesin kullanabildiği ERP",
+      "lead": "Genel amaçlı ERP sistemleri üniversiteye uyarlanmaya çalışıldığında ortaya ağır, karmaşık ve personelin kaçındığı ekranlar çıkar. SERP tam tersi bir yoldan doğdu: gerçek bir üniversitenin günlük işleyişi içinde, ihtiyaç duyulan süreçler teker teker ele alınarak şekillendi. Gereksiz detaylar kaldırıldı; satın almadan bütçeye, toplantı yönetiminden etkinlik planlamasına kadar tüm süreçler, rektörlükten bölüm sekreterliğine kadar herkesin ilk günden kullanabildiği sade ekranlarla yönetilir.",
+      "features": [
+        {
+          "title": "Satın alma ve tedarikçi yönetimi",
+          "text": "Talep, onay, tedarikçi kayıtları ve sipariş takibi uçtan uca izlenebilir. Her adım kayıt altında, her onay yetkili rolde."
+        },
+        {
+          "title": "Bütçe yönetimi",
+          "text": "Birim ve kalem bazında bütçe planlama; harcamalar bütçe kalemleriyle eşleşir, sapmalar anında görünür."
+        },
+        {
+          "title": "Toplantı yönetimi",
+          "text": "Gündem, katılımcı, karar ve görev takibi tek yerde. Alınan kararlar sorumlusuna atanır ve kapanana kadar izlenir."
+        },
+        {
+          "title": "Etkinlik planlama",
+          "text": "Kurum etkinlikleri; mekân, kaynak ve takvim yönetimiyle birlikte planlanır, bütçeyle ilişkilendirilir."
+        },
+        {
+          "title": "Yönetim paneli ve raporlama",
+          "text": "Fakülte ve birim bazında özet göstergeler tek bakışta. İstenen rapor, istenen formatta ve istenen periyotta üretilir."
+        },
+        {
+          "title": "Açık entegrasyon",
+          "text": "Kurumun hâlihazırda kullandığı öğrenci bilgi sistemi, muhasebe, e-imza ve diğer tüm dış sistemlere bağlanabilir."
+        }
+      ],
+      "detail": {
+        "title": "Kurulumu hızlı, benimsenmesi daha hızlı",
+        "text": "ERP projelerinin çoğu yazılımdan değil, personelin sisteme geçmemesinden başarısız olur. SERP'in ekranları sade olduğu için kurumun tüm personeli kısa bir eğitimle sisteme geçer; süreçler ilk haftadan itibaren sistem üzerinden yürümeye başlar. Yüksek performanslı altyapı, yoğun dönemlerde dahi bekleme yaşatmaz.",
+        "bullets": [
+          "Tüm personelin kısa sürede benimsediği sade, rol tabanlı arayüz",
+          "Yoğun dönemlerde de hızlı çalışan, ölçeklenebilir altyapı",
+          "Yönetimin istediği raporu, istediği şekilde ve anında üretme",
+          "Mevcut sistemlerle çift yönlü, açık entegrasyon"
+        ]
+      },
+      "screens": [
+        "Modül paneli — tüm süreçler tek ekranda",
+        "Depo ve stok yönetimi",
+        "Konum ve kampüs tanımları"
+      ]
+    },
+    {
+      "slug": "d-plan",
+      "icon": "calendar",
+      "name": "D-plan",
+      "tag": "Derslik planlama",
+      "short": "Dönemlik ve yıllık ders programını tamamen otomatik oluşturur. Derslik, akademisyen ve ders verileri entegrasyonla bir kez gelir; bir aylık planlama üç güne iner.",
+      "page_title": "Ders programı, tamamen otomatik",
+      "lead": "Her dönem başında haftalarca süren, Excel tabloları ve e-postalar arasında yürüyen ders programı hazırlığı, üniversitelerin en çok zaman kaybettiği süreçlerden biridir. D-plan bu süreci kurumun belirlediği kurallar dahilinde tamamen otomatik hâle getirir. Derslik, akademisyen ve ders bilgileri kurum sistemlerinden entegrasyonla bir kez alınır; planlamacı veri girmez, yalnızca üretilen programı denetler ve yayınlar.",
+      "features": [
+        {
+          "title": "Tam otomatik planlama",
+          "text": "Belirlenen şartlar dahilinde dönemlik veya yıllık programın tamamı sistem tarafından üretilir; bölüm bazında ya da tüm üniversite için tek seferde."
+        },
+        {
+          "title": "Entegre veri, sıfır manuel giriş",
+          "text": "Derslik, akademisyen, ders ve öğrenci grubu bilgileri öğrenci bilgi sisteminden otomatik gelir. Her dönem yeniden yüklenmez."
+        },
+        {
+          "title": "Kural tabanlı kısıtlar",
+          "text": "Derslik kapasitesi ve donanımı, akademisyen uygunluğu, bina/kampüs mesafesi ve kurumun kendi kuralları planlamaya dahil edilir."
+        },
+        {
+          "title": "Çakışmasız sonuç",
+          "text": "Akademisyen, derslik ve öğrenci grubu çakışmaları plan üretilirken engellenir; sonradan düzeltme gerekmez."
+        },
+        {
+          "title": "Derslik uygunluk ve kroki görünümü",
+          "text": "Hangi derslik hangi gün ve saatte dolu, hangisi boş — hem liste hem bina planı (kroki) üzerinde görünür."
+        },
+        {
+          "title": "Her sisteme yayın",
+          "text": "Üretilen program açık entegrasyonla öğrenci portalı, akademisyen portalı, OBS ve takvim uygulamalarına tek adımda gönderilir."
+        }
+      ],
+      "detail": {
+        "title": "Bir aylık planlama, üç güne",
+        "text": "D-plan'ı kullanan üniversitede daha önce yaklaşık bir ay süren dönem planlaması, önce bir haftaya, ardından üç güne indi. Program bugün öğrenci ve akademisyen portallarında canlı olarak kullanılmakta; akademisyen uygunluğu ve derslik verisi her dönem sistemden otomatik alınmaktadır.",
+        "bullets": [
+          "Planlama süresi bir aydan üç güne indi",
+          "Veri entegrasyonla bir kez alınır; her dönem yeniden girilmez",
+          "Çakışmalar plan üretilirken engellenir, sonradan düzeltme yoktur",
+          "Çıktı öğrenci ve akademisyen portalı dahil istenen her sisteme aktarılır"
+        ]
+      },
+      "screens": [
+        "Otomatik üretilmiş haftalık ders programı",
+        "Kroki: dersliklerin doluluk haritası",
+        "Boş derslik — haftalık uygunluk"
+      ]
+    },
+    {
+      "slug": "ascore",
+      "icon": "chart",
+      "name": "A-Score",
+      "tag": "Akademisyen performansı",
+      "short": "YÖK Akademik, Scopus ve TR Dizin verilerini otomatik toplar; her akademisyenin gerçek akademik değerini kurumun kendi kriterleriyle ölçülebilir bir puana dönüştürür.",
+      "page_title": "Akademik performansı ölçülebilir hâle getirin",
+      "lead": "Bir akademisyenin akademik değeri, yayınları YÖK Akademik'te, atıfları Scopus'ta, ulusal çalışmaları TR Dizin'de dağınık hâlde durur; bunları elle toplamak haftalar alır ve her seferinde tartışma yaratır. A-Score bu kaynaklardaki verileri her akademisyen için otomatik toplar, eşleştirir ve kurumun belirlediği kriterlerle tek bir performans puanına dönüştürür. Veri kaynakları genişletilebilir bir mimariyle yazıldı: Web of Science veya Google Scholar yarın eklenebilir.",
+      "features": [
+        {
+          "title": "Çok kaynaklı, otomatik veri",
+          "text": "YÖK Akademik, Scopus ve TR Dizin'den makale, bildiri, kitap, tez danışmanlığı ve atıf verileri otomatik çekilir; kaynaklar arası eşleşmeler (YÖK–Scopus, Scopus–TR Dizin) tespit edilir."
+        },
+        {
+          "title": "Kuruma özel performans puanı",
+          "text": "Yayın sayısı, atıf, seminer, ders yükü gibi parametreler kurumun belirlediği yüzdesel ağırlıklarla hedef/gerçekleşen karşılaştırmasına göre puanlanır."
+        },
+        {
+          "title": "Esnek kriter yönetimi",
+          "text": "Yetkililer yeni kriter ekler, ağırlığını belirler; hesaplama anında güncellenir. Her fakülte kendi kriter setini kullanabilir."
+        },
+        {
+          "title": "Karşılaştırma",
+          "text": "İki akademisyeni, bölümleri veya fakülteleri yayın, atıf ve yıllara göre yan yana görün."
+        },
+        {
+          "title": "Fakülte ve üniversite raporları",
+          "text": "Fakülte/bölüm ve üniversite düzeyinde yayın dağılımı, yıllık trend ve performans özetleri hazır rapor olarak."
+        },
+        {
+          "title": "Akademisyen profili",
+          "text": "Her akademisyen kendi profilinde yayınlarını, yıllara göre dağılımını ve performans notunu inceleyebilir."
+        }
+      ],
+      "detail": {
+        "title": "Gerçek akademik değerin göstergesi",
+        "text": "Rektörlük, dekanlık ve bölüm başkanlıkları, her akademisyenin akademik değerini tahmine değil veriye dayalı olarak görür; atama, yükseltme ve teşvik kararları şeffaf bir hesaba dayanır. Akademisyen ise kendi profilinden puanının nereden geldiğini ve eksik kriterlerini takip eder.",
+        "bullets": [
+          "Yayın ve atıf verisi elle toplanmaz; kaynaklardan otomatik gelir ve eşleştirilir",
+          "Kriterler ve ağırlıklar kuruma aittir; hesap şeffaf ve izlenebilirdir",
+          "Rektörlük, dekanlık ve bölüm başkanlığı için ortak panel; akademisyen için kişisel profil",
+          "Yeni veri kaynakları eklenebilir mimari"
+        ]
+      },
+      "screens": [
+        "Dashboard — kaynak bazında yayın trendi",
+        "Üniversite raporu — fakülte bazında yayınlar",
+        "Performans hesaplama — kuruma özel ağırlıklar"
+      ]
+    },
+    {
+      "slug": "crm",
+      "icon": "megaphone",
+      "name": "CRM – Kampanya Yönetimi",
+      "tag": "Aday öğrenci ve iletişim",
+      "short": "Tüm kaynaklardan gelen aday verisini tek noktada toplar; kayıt ve tercih dönemlerini SMS, e-posta, sosyal medya, çağrı merkezi, IVR ve AI Voice kampanyalarıyla planlı biçimde yönetir.",
+      "page_title": "Kayıt ve tercih dönemini tek noktadan yönetin",
+      "lead": "Tercih ve kayıt döneminde aday öğrenci verisi web formlarından, dış başvuru platformlarından, fuarlardan ve çağrı merkezinden ayrı ayrı akar; hangi adayın arandığı, hangisine mesaj gittiği çoğu zaman belirsizdir. CRM – Kampanya Yönetimi bu dağınık kaynakları tek bir aday havuzunda birleştirir. Lisans, yüksek lisans, yatay geçiş, DGS, uluslararası ve özel yetenek başvuruları ayrı ayrı izlenir; adaylar gruplanır ve her gruba uygun kanaldan kampanya planlanıp sonucu aynı ekrandan takip edilir.",
+      "features": [
+        {
+          "title": "Tek aday havuzu",
+          "text": "Web formu, dış başvuru sistemleri ve tanıtım etkinliklerinden gelen on binlerce aday kaydı tek havuzda; başvuru kaynağı ve kanalı her kayıtta belli."
+        },
+        {
+          "title": "Başvuru türüne göre takip",
+          "text": "Lisans, yüksek lisans, yatay geçiş, DGS, uluslararası, özel yetenek, atölye ve kampüs ziyareti başvuruları ayrı akışlarda, tek panelde."
+        },
+        {
+          "title": "Segmentasyon",
+          "text": "Adaylar başvuru türü, bölüm ilgisi, şehir ve davranışa göre gruplara ayrılır; her grup için farklı mesaj ve kanal."
+        },
+        {
+          "title": "Çok kanallı kampanya",
+          "text": "SMS, e-posta ve sosyal medya kampanyaları tek takvimden planlanır ve gönderilir."
+        },
+        {
+          "title": "Sesli iletişim ve AI Voice",
+          "text": "Çağrı merkezi aramaları, IVR ve yapay zeka destekli sesli aramalar (AI Voice) aynı plan içinde yönetilir; her arama kayıt altındadır."
+        },
+        {
+          "title": "Gösterge paneli ve dönüşüm raporu",
+          "text": "Toplam aday, başvuru türü dağılımı, aylık başvuru trendi ve bölüme göre adaylar tek bakışta; hangi kanalın kaç başvuru getirdiği ölçülür."
+        }
+      ],
+      "detail": {
+        "title": "Her kanal, tek plan",
+        "text": "Mesaj, arama ve sosyal medya kampanyaları ayrı araçlarda değil, aynı aday verisi üzerinde planlanır. Böylece hiçbir aday iki kez aranmaz, hiçbiri unutulmaz ve tanıtım bütçesinin karşılığı rakamla görünür.",
+        "bullets": [
+          "Tüm aday kaynakları ve başvuru türleri tek sistemde",
+          "SMS, e-posta, sosyal medya, IVR, AI Voice ve çağrı merkezi aynı plandan",
+          "Aylık trend ve kanal bazlı dönüşüm raporlarıyla ölçülebilir kampanya yönetimi",
+          "Kayıt olan aday öğrenci bilgi sistemine aktarılır"
+        ]
+      },
+      "screens": [
+        "Gösterge paneli — başvuru türü ve kaynak dağılımı",
+        "Aylık başvuru trendi",
+        "Bölüme göre adaylar"
+      ]
+    },
+    {
+      "slug": "ticket",
+      "icon": "ticket",
+      "name": "Ticket Management",
+      "tag": "Talep ve destek yönetimi",
+      "short": "Öğrenci veya personel, hangi kanaldan ulaşırsa ulaşsın tüm talepler tek sisteme düşer; ilgili birim cevaplar, her talep kapanana kadar izlenir, hiçbiri kaybolmaz.",
+      "page_title": "Hiçbir talep kaybolmasın",
+      "lead": "Bir üniversitede talepler her yerden gelir: öğrenci portaldan yazar, akademisyen e-posta atar, veli telefon eder, personel WhatsApp'tan ulaşır. Her kanal farklı bir kişiye düştüğünde talepler unutulur, aynı sorun üç kez sorulur ve kimse ne kadar talep geldiğini bilemez. Ticket Management, öğrenci ve personel ayrımı olmadan kurumdaki tüm süreçlere yönelik talepleri tek kuyrukta toplar; talep ilgili birime düşer, bir sorumluya atanır ve kapanana kadar izlenir.",
+      "features": [
+        {
+          "title": "Her kanaldan tek kuyruğa",
+          "text": "Portal, e-posta, mobil uygulama, WhatsApp ve telefon aynı sisteme bağlıdır; kullanıcı nereden ulaşırsa ulaşsın talep aynı yere düşer."
+        },
+        {
+          "title": "Öğrenci ve personel, iç ve dış kaynak",
+          "text": "Öğrenci, akademisyen, idari personel ve dış paydaşlar aynı sistemden talep açar; her biri kendi taleplerinin durumunu görür."
+        },
+        {
+          "title": "Birim bazlı yönetim",
+          "text": "Talep kategorisine göre ilgili birime yönlendirilir; birim kullanıcıları cevaplar, gerekirse başka birime devreder."
+        },
+        {
+          "title": "Kurumun tüm süreçleri",
+          "text": "BT, öğrenci işleri, teknik hizmetler, kütüphane, mali işler — hangi birim olursa olsun aynı akış."
+        },
+        {
+          "title": "İzlenebilirlik ve geçmiş",
+          "text": "Her talebin kim tarafından, ne zaman ele alındığı ve ne yanıt verildiği kayıt altındadır; aynı kullanıcının geçmiş talepleri tek ekranda."
+        },
+        {
+          "title": "Raporlama",
+          "text": "Birim, kategori ve dönem bazında talep hacmi, açık/kapalı talep sayısı ve çözüm süreleri."
+        }
+      ],
+      "detail": {
+        "title": "Kimsenin problemi arada kaybolmaz",
+        "text": "Talep hangi kanaldan gelirse gelsin kayıt altına alınır, bir sorumluya düşer ve kapanana kadar izlenir. Yönetim hangi birime ne kadar talep geldiğini ve nerede biriktiğini görür; kadro ve süreç kararları veriye dayanır.",
+        "bullets": [
+          "Portal, e-posta, mobil, WhatsApp ve telefon tek kuyrukta",
+          "Her talebin bir sorumlusu, bir durumu ve bir geçmişi vardır",
+          "Kurumun tüm birimleri aynı sistemde, aynı akışta",
+          "Birim bazlı talep hacmi ve çözüm raporları"
+        ]
+      },
+      "screens": [
+        "Talep listesi — tek kuyruk",
+        "Aylık talep trendi"
+      ]
+    },
+    {
+      "slug": "personel-verimliligi",
+      "icon": "users",
+      "name": "Akademik Personel Verimliliği",
+      "tag": "Analitik",
+      "short": "Verilen ders sayısı, ders kapasitesi ve derslerdeki kapsama oranlarıyla akademik personelin kurum içi verimliliğini oranlarla ortaya koyar; fakülte ve bölüm bazında karşılaştırır.",
+      "page_title": "Akademik personelin verimliliği, oranlarla",
+      "lead": "Bu ürün A-Score'dan farklıdır: yayın ve atıf değil, kurum içi performansı ölçer. Bir akademisyen kaç ders veriyor, kaç ders verebilir, verdiği derslerin ne kadarını işledi, kurum içi değerlendirmelerde nerede duruyor? Akademik Personel Verimliliği bu soruları ders programı ve okul kaynaklarından çekilen verilerle, tahmine değil oranlara dayanarak cevaplar.",
+      "features": [
+        {
+          "title": "Ders yükü ve kapasite",
+          "text": "Verilen ders sayısı ile verilebilecek ders sayısı karşılaştırılır; kapasitesi dolu ve boş akademisyenler görünür."
+        },
+        {
+          "title": "Ders kapsama oranı",
+          "text": "Her dersin planlanan müfredatının ne kadarının işlendiği yüzde olarak izlenir; eksik kalan dersler dönem bitmeden fark edilir."
+        },
+        {
+          "title": "Kurum içi değerlendirme kriterleri",
+          "text": "Kurumun belirlediği değerlendirme kriterleri ve ağırlıkları hesaplamaya dahil edilir; fakülteye göre farklı kriter setleri tanımlanabilir."
+        },
+        {
+          "title": "Fakülte ve bölüm görünümü",
+          "text": "Genel değerlendirme özeti, fakülte bazlı kriter dağılımı, en yüksek ve en düşük performans gösteren akademisyenler."
+        },
+        {
+          "title": "Akademisyen listesi",
+          "text": "Her akademisyenin ders yükü, kapsama oranı ve değerlendirme puanı tek tabloda; sıralanabilir ve filtrelenebilir."
+        },
+        {
+          "title": "Entegre ve açık veri",
+          "text": "Veriler ders programı (D-plan) ve öğrenci bilgi sisteminden otomatik çekilir; her sistemden entegrasyon yapılabilir."
+        }
+      ],
+      "detail": {
+        "title": "Performansı oranlarla ispatlar",
+        "text": "Hangi akademisyenin kapasitesi dolu, hangisinde boşluk var, hangi derslerin kapsaması eksik — dekanlık ve bölüm başkanlıkları ders dağılımı ve kadro kararlarını veriyle alır. Akademisyenle yapılan değerlendirme görüşmesi tartışmaya değil, sayılara dayanır.",
+        "bullets": [
+          "Ders programı ve okul kaynaklarından otomatik veri; elle giriş yok",
+          "Ders yükü, kapasite ve kapsama oranı tek yerde hesaplanır",
+          "Fakülte ve bölüm bazında karşılaştırılabilir, ispatlanabilir oranlar",
+          "A-Score ile birlikte kullanıldığında akademik ve kurum içi performans aynı panelde"
+        ]
+      },
+      "screens": [
+        "Değerlendirme özeti — yük oranı ve bileşik skor",
+        "Ders kapsamı — hoca ve şube dağılımı",
+        "Fakülte bazlı kriterler"
+      ]
+    },
+    {
+      "slug": "derslik-verimliligi",
+      "icon": "door",
+      "name": "Derslik Verimliliği",
+      "tag": "Analitik",
+      "short": "Hangi derslikte kim var, derslik kaçta açılmalı, kaç öğrenci gelecek, kaç masa var — derslik kullanımını yönetilebilir hâle getirir; mekân ve enerji maliyetinde ölçülebilir tasarruf sağlar.",
+      "page_title": "Dersliği yönetilebilir hâle getirin",
+      "lead": "Kurumların en büyük ve en görünmez sorunlarından biri derslik kullanımıdır: hangi derslikte hangi akademisyen var, derslik saat kaçta açılmalı, kaç öğrenci gelecek, kaç masa ve hangi donanım var? Bu sorular cevapsız kaldığında dersler büyük dersliklerde az öğrenciyle işlenir, boş derslikler ısıtılır ve yeni bina ihtiyacı gerçekte var olmayan bir sorun üzerine kurulur. Derslik Verimliliği bu soruların tamamını tek ekranda, bina planı üzerinde cevaplar.",
+      "features": [
+        {
+          "title": "Derslik–ders–akademisyen eşleşmesi",
+          "text": "Hangi derslikte hangi akademisyen, hangi gün ve saatte; D-plan'dan gelen program verisiyle otomatik."
+        },
+        {
+          "title": "Kapasite uyumu",
+          "text": "Gelecek öğrenci sayısı ile dersliğin masa sayısı ve donanımı karşılaştırılır; küçük sınıfa büyük derslik, büyük sınıfa küçük derslik tespit edilir."
+        },
+        {
+          "title": "Açılış ve kullanım saatleri",
+          "text": "Her dersliğin ne zaman açılacağı, ne kadar süre kullanılacağı ve ne zaman boş kalacağı belli."
+        },
+        {
+          "title": "Sensör desteği",
+          "text": "Dersliklerdeki sensörlerle gerçek kullanım verisi sisteme dahil olur; planlanan ile gerçekleşen kullanım arasındaki fark görünür."
+        },
+        {
+          "title": "Kroki ve uygunluk haritası",
+          "text": "Derslikler bina planı (kroki) üzerinde doluluk durumuyla birlikte; haftalık uygunluk tablosu tek bakışta."
+        },
+        {
+          "title": "Bina ve kampüs özeti",
+          "text": "Derslik verimliliği bina, fakülte ve kampüs düzeyinde raporlanır; yatırım kararlarına dayanak oluşturur."
+        }
+      ],
+      "detail": {
+        "title": "Ekonomik ve mekânsal kazanım",
+        "text": "Derslik detayları yönetilebilir olunca atıl alan ve gereksiz açılış saatleri ortadan kalkar. Isıtma, aydınlatma ve temizlik maliyeti düşer; mevcut alan daha verimli kullanıldığı için yeni derslik ihtiyacı veriye göre değerlendirilir.",
+        "bullets": [
+          "Derslik, akademisyen, öğrenci sayısı ve donanım tek ekranda",
+          "Sensörlerle planlanan–gerçekleşen kullanım karşılaştırması",
+          "Mekân ve enerji maliyetinde ölçülebilir tasarruf",
+          "D-plan ile birlikte: verimlilik bulguları bir sonraki dönemin planına girer"
+        ]
+      },
+      "screens": [
+        "Şu an boş derslikler — haftalık uygunluk",
+        "Kroki: bina planı üzerinde doluluk",
+        "Haftalık program görünümü"
+      ]
+    }
+  ],
+  "why": {
+    "title": "Neden Unidiso",
+    "lead": "Üniversite süreçleri için yazılmış, birbiriyle konuşan ürünler.",
+    "items": [
+      {
+        "title": "Üniversiteye özel",
+        "text": "Genel amaçlı yazılımı üniversiteye uyarlamıyoruz; fakülte, bölüm, dönem ve YÖK süreçleri ürünlerin içinde hazır geliyor."
+      },
+      {
+        "title": "Ayrı alınır, birlikte çalışır",
+        "text": "Yalnız D-plan ile başlayabilirsiniz. Daha sonra eklenen her ürün aynı veriyi kullanır; yeniden veri girişi yoktur."
+      },
+      {
+        "title": "Kurulumdan sonra da yanınızda",
+        "text": "Dönem başı planlama, teşvik dönemi ve denetim haftalarında ekibimiz kurumunuzla birlikte çalışır."
+      }
+    ]
+  },
+  "metrics": {
+    "title": "Rakamlarla",
+    "items": [
+      {
+        "value": "7",
+        "label": "birbiriyle entegre ürün"
+      },
+      {
+        "value": "TODO",
+        "label": "planlanan ders saati"
+      },
+      {
+        "value": "TODO",
+        "label": "değerlendirilen akademisyen"
+      },
+      {
+        "value": "TODO",
+        "label": "çözülen destek talebi"
+      }
+    ]
+  },
+  "quote": {
+    "text": "TODO: Referans alıntısı. Dönem planlamamız haftalar yerine iki günde tamamlandı; derslik çakışması sıfıra indi.",
+    "name": "TODO: Ad Soyad",
+    "role": "TODO: Unvan, Üniversite"
+  },
+  "cta": {
+    "title": "Kurumunuz için hangi ürünle başlamalı?",
+    "text": "30 dakikalık bir demoda süreçlerinizi dinleyip size uygun ürün kombinasyonunu önerelim.",
+    "primary": "Demo talep et",
+    "secondary": "İletişime geç"
+  },
+  "footer": {
+    "about": "Üniversiteler için ERP, planlama, performans ve destek yönetimi çözümleri.",
+    "cols": {
+      "products": "Ürünler",
+      "company": "Şirket",
+      "contact": "İletişim"
+    },
+    "company_links": [
+      {
+        "label": "Neden Unidiso",
+        "href": "/#neden"
+      },
+      {
+        "label": "İletişim",
+        "href": "/iletisim.html"
+      }
+    ],
+    "contact": {
+      "email": "info@unidiso.com",
+      "phone": "+90 532 204 61 15",
+      "address": "Maslak Mah. Taşyoncası Sk. No: 1V – 1Y, 34398 Sarıyer / İstanbul",
+      "linkedin": "TODO: https://linkedin.com/company/...",
+      "address_full": "Maslak Mahallesi, Taşyoncası Sokak, No: 1V ve No: 1Y, Bina Kodu: 34481742, 34398 Sarıyer / İstanbul",
+      "map_url": "https://maps.app.goo.gl/GTt2htcKrHmXSpKR7",
+      "lat": 41.119407,
+      "lng": 29.009687
+    },
+    "copyright": "Unidiso. Tüm hakları saklıdır."
+  },
+  "contact": {
+    "title": "Demo talep edin",
+    "lead": "Formu doldurun; bir iş günü içinde dönüş yapıp demo için uygun bir saat belirleyelim.",
+    "form_to": "info@unidiso.com",
+    "fields": {
+      "name": "Ad Soyad",
+      "email": "Kurumsal e-posta",
+      "org": "Üniversite / Kurum",
+      "role": "Göreviniz",
+      "product": "İlgilendiğiniz ürün",
+      "any": "Henüz karar vermedim",
+      "message": "Mesajınız",
+      "submit": "Demo talep et",
+      "required": "Bu alan zorunlu",
+      "note": "Bilgileriniz yalnızca demo planlaması için kullanılır.",
+      "success": "Talebiniz alındı. Bir iş günü içinde size dönüş yapacağız."
+    },
+    "info": {
+      "email": "E-posta",
+      "phone": "Telefon",
+      "address": "Adres",
+      "map": "Google Haritalar'da aç",
+      "directions": "Yol tarifi al"
+    }
+  },
+  "ui": {
+    "breadcrumb_products": "Ürünler",
+    "features_title": "Neler yapar",
+    "other_products": "Diğer ürünler",
+    "product_cta": "Bu ürün için demo talep et",
+    "all_products": "Tüm ürünler",
+    "learn": "Ürünü incele",
+    "lang_switch": "English"
+  },
+  "eco": {
+    "title": "Ayrı ürünler, tek veri",
+    "lead": "Her ürün kendi başına çalışır; birlikte kurulduğunda aynı öğrenci, akademisyen ve derslik verisini paylaşır. Bir yerde giren veri her yerde güncellenir."
+  }
+}

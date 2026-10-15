@@ -1,0 +1,196 @@
+/* ============================================================
+   depth.css — 3D derinlik ve canlı hareket katmanı
+   effects.css'in üstüne biner; sadece hareket/derinlik ekler.
+   ============================================================ */
+
+/* ---------- Hero: 3D sahne ---------- */
+.hero-visual{perspective:1600px;perspective-origin:50% 40%}
+.hero-stage{position:relative;transform-style:preserve-3d;
+  transform:rotateX(calc(var(--sx,0deg) + var(--rx,0deg))) rotateY(calc(-6deg + var(--ry,0deg)));
+  transition:transform .25s cubic-bezier(.2,.7,.2,1);will-change:transform}
+.hero-visual .frame{transform:translateZ(0);transition:none}
+.hero-visual:hover .frame{transform:translateZ(0)}
+.hero-stage .chip{transform-style:preserve-3d}
+.hero-stage .chip-1{animation:chipFloat3a 6s ease-in-out infinite}
+.hero-stage .chip-2{animation:chipFloat3b 7s ease-in-out 1s infinite}
+.hero-stage .chip-3{animation:chipFloat3c 8s ease-in-out .5s infinite}
+@keyframes chipFloat3a{0%,100%{transform:translateZ(90px) translateY(0)}50%{transform:translateZ(110px) translateY(-10px)}}
+@keyframes chipFloat3b{0%,100%{transform:translateZ(70px) translateY(0)}50%{transform:translateZ(90px) translateY(-12px)}}
+@keyframes chipFloat3c{0%,100%{transform:translateZ(120px) translateY(0)}50%{transform:translateZ(140px) translateY(-8px)}}
+.hero-stage .chip{box-shadow:0 30px 60px rgba(5,20,18,.55),0 0 0 1px rgba(94,234,212,.25) inset}
+
+/* Ekranın üzerinde süzülen ışık şeridi */
+.frame .sheen{position:absolute;inset:0;z-index:2;pointer-events:none;overflow:hidden;border-radius:inherit}
+.frame .sheen::before{content:"";position:absolute;top:-60%;left:-40%;width:40%;height:220%;transform:rotate(18deg) translateX(-120%);
+  background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.14) 45%,rgba(94,234,212,.18) 55%,rgba(255,255,255,0));
+  animation:sheenRun 7s cubic-bezier(.4,0,.2,1) infinite}
+@keyframes sheenRun{0%,55%{transform:rotate(18deg) translateX(-140%)}100%{transform:rotate(18deg) translateX(420%)}}
+
+/* Zemin gölgesi: ekranın altında yüzen elips */
+.hero-stage::after{content:"";position:absolute;left:8%;right:8%;bottom:-70px;height:80px;border-radius:50%;z-index:-2;
+  background:radial-gradient(closest-side,rgba(94,234,212,.35),rgba(5,20,18,.6) 60%,transparent);filter:blur(22px);transform:translateZ(-80px)}
+
+/* Arka plandaki derinlik halkaları */
+.hero .orbit{position:absolute;z-index:-1;left:62%;top:50%;width:min(80vw,900px);aspect-ratio:1;border-radius:50%;pointer-events:none;
+  transform:translate(-50%,-50%) rotateX(72deg);transform-style:preserve-3d;border:1px solid rgba(94,234,212,.14);
+  box-shadow:0 0 0 1px rgba(94,234,212,.04) inset}
+.hero .orbit::before,.hero .orbit::after{content:"";position:absolute;inset:14%;border-radius:50%;border:1px dashed rgba(94,234,212,.18);animation:orbitSpin 40s linear infinite}
+.hero .orbit::after{inset:32%;border-style:solid;border-color:rgba(94,234,212,.1);animation-direction:reverse;animation-duration:28s}
+.hero .orbit i{position:absolute;left:50%;top:0;width:10px;height:10px;margin:-5px;border-radius:50%;background:var(--mint);
+  box-shadow:0 0 18px 4px rgba(94,234,212,.7);transform-origin:50% calc(min(80vw,900px)/2);animation:orbitSpin 40s linear infinite}
+.hero .orbit i:nth-child(2){animation-duration:28s;animation-direction:reverse;transform-origin:50% calc(min(80vw,900px)*.36);top:14%;width:7px;height:7px}
+@keyframes orbitSpin{to{transform:rotate(360deg)}}
+
+/* Parçacık ağı */
+.net{position:absolute;inset:0;z-index:-1;width:100%;height:100%;pointer-events:none;opacity:.9}
+
+/* ---------- Hero başlığı: kelime kelime 3D açılış ---------- */
+.hero h1 .w{display:inline-block;transform-origin:50% 100%;opacity:0;transform:rotateX(80deg) translateY(.3em);
+  animation:wordIn .9s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(var(--n,0)*80ms + 120ms)}
+.hero h1{perspective:600px}
+@keyframes wordIn{to{opacity:1;transform:none}}
+.hero h1 .w.hl{background:linear-gradient(100deg,#fff 20%,var(--mint) 50%,#fff 80%);background-size:200% 100%;
+  -webkit-background-clip:text;background-clip:text;color:transparent;animation:wordIn .9s cubic-bezier(.2,.8,.2,1) forwards,shimmer 5s linear 1.2s infinite}
+@keyframes shimmer{to{background-position:-200% 0}}
+
+/* ---------- Kartlar: gerçek 3D eğilme + parlama ---------- */
+.products{perspective:1200px}
+.product{transform-style:preserve-3d;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(var(--ty,0px));
+  transition:transform .18s cubic-bezier(.2,.7,.2,1),border-color .35s,box-shadow .35s}
+.product:hover{--ty:-6px}
+.product .glare{position:absolute;inset:0;z-index:2;pointer-events:none;border-radius:inherit;opacity:0;transition:opacity .3s;
+  background:linear-gradient(calc(var(--ga,120deg)),rgba(255,255,255,0) 35%,rgba(255,255,255,.12) 50%,rgba(255,255,255,0) 65%)}
+.product:hover .glare{opacity:1}
+.product .frame,.product .product-icon,.product h3{transform:translateZ(24px)}
+.product p,.product .link,.product .tag{transform:translateZ(12px)}
+
+.features{perspective:1200px}
+.feature{transform-style:preserve-3d;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(var(--ty,0px));transition:transform .18s cubic-bezier(.2,.7,.2,1),box-shadow .35s,border-color .35s}
+.feature:hover{--ty:-5px}
+.why{perspective:1200px}
+.why article{transform-style:preserve-3d;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(var(--ty,0px));transition:transform .18s cubic-bezier(.2,.7,.2,1),box-shadow .35s}
+.why article:hover{--ty:-5px}
+
+/* ---------- Ürün sayfası vitrini: kaydırdıkça düzleşen ekran ---------- */
+.showcase{perspective:1800px;perspective-origin:50% 0}
+.showcase .frame{transform:rotateX(var(--sx,14deg));transform-origin:50% 0;transition:transform .2s linear;will-change:transform;
+  box-shadow:0 60px 120px -30px rgba(5,20,18,.7),0 0 0 1px rgba(94,234,212,.15)}
+
+/* ---------- Mıknatıs butonlar ---------- */
+.btn{transform:translate(var(--bx,0px),var(--by,0px));transition:transform .2s cubic-bezier(.2,.7,.2,1),background var(--dur) var(--ease),color var(--dur) var(--ease),border-color var(--dur) var(--ease)}
+.btn-white,.btn-primary{position:relative;overflow:hidden}
+.btn-white::after,.btn-primary::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(94,234,212,.35) 50%,transparent 70%);transform:translateX(-120%);transition:transform .6s cubic-bezier(.4,0,.2,1)}
+.btn-white:hover::after,.btn-primary:hover::after{transform:translateX(120%)}
+
+/* ---------- İmleç ışığı (koyu bantlarda) ---------- */
+.cursor-glow{position:fixed;left:0;top:0;width:520px;height:520px;margin:-260px 0 0 -260px;border-radius:50%;z-index:0;pointer-events:none;
+  background:radial-gradient(closest-side,rgba(94,234,212,.16),rgba(94,234,212,0));mix-blend-mode:screen;opacity:0;transition:opacity .4s;
+  transform:translate(var(--cx,-999px),var(--cy,-999px));will-change:transform}
+.cursor-glow.is-on{opacity:1}
+.hero,.band-dark,.cta,.page-hero,.showcase{z-index:1}
+
+/* ---------- Ekosistem: 3D eğik halka ---------- */
+.eco > div:last-child{perspective:1400px}
+.eco-svg{transform:rotateX(14deg) rotateY(-10deg);transform-style:preserve-3d;animation:ecoSway 12s ease-in-out infinite;filter:drop-shadow(0 40px 60px rgba(5,20,18,.5))}
+@keyframes ecoSway{0%,100%{transform:rotateX(14deg) rotateY(-10deg)}50%{transform:rotateX(10deg) rotateY(8deg)}}
+
+/* ---------- Bölüm başlıkları: alt çizgi ışığı ---------- */
+.sec-head h2{position:relative;display:inline-block}
+.sec-head h2::after{content:"";position:absolute;left:0;bottom:-10px;height:2px;width:0;background:linear-gradient(90deg,var(--mint),transparent);transition:width 1s var(--ease)}
+.reveal.is-in .sec-head h2::after,.sec-head.is-in h2::after{width:60%}
+
+/* ---------- Mobil / hareket azaltma ---------- */
+@media (max-width:900px){
+  .hero-stage{transform:none!important}
+  .hero-stage .chip{animation:chipFloat 6s ease-in-out infinite}
+  .hero .orbit{display:none}
+  .showcase .frame{transform:none!important}
+}
+@media (prefers-reduced-motion:reduce){
+  .hero-stage,.product,.feature,.why article,.showcase .frame,.eco-svg,.btn{transform:none!important;animation:none!important}
+  .hero h1 .w{opacity:1;transform:none;animation:none}
+  .frame .sheen,.hero .orbit,.net,.cursor-glow{display:none}
+}
+
+/* ============================================================
+   İÇ SAYFALAR + SCROLL 3D
+   ============================================================ */
+
+/* ---------- Scroll reveal 3D: kartlar derinlikten gelir ---------- */
+.reveal-3d{transform:perspective(1000px) rotateX(16deg) translateY(40px) translateZ(-60px);opacity:0;transform-origin:50% 100%;
+  transition:opacity .8s var(--ease),transform .9s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--i,0)*90ms)}
+.reveal-3d.is-in{opacity:1;transform:perspective(1000px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(var(--ty,0px))}
+.reveal-stagger > *{opacity:0;transform:translateY(24px) rotateX(10deg);transition:opacity .6s var(--ease),transform .7s cubic-bezier(.2,.8,.2,1)}
+.reveal-stagger.is-in > *{opacity:1;transform:none}
+.reveal-stagger.is-in > :nth-child(1){transition-delay:0ms}.reveal-stagger.is-in > :nth-child(2){transition-delay:70ms}.reveal-stagger.is-in > :nth-child(3){transition-delay:140ms}
+.reveal-stagger.is-in > :nth-child(4){transition-delay:210ms}.reveal-stagger.is-in > :nth-child(5){transition-delay:280ms}.reveal-stagger.is-in > :nth-child(6){transition-delay:350ms}
+.other-products{perspective:900px}
+.other-products a{transform-style:preserve-3d;transition:border-color var(--dur),transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s}
+.other-products a:hover{transform:translateY(-4px) rotateX(4deg);box-shadow:0 20px 40px rgba(15,118,110,.14)}
+
+/* ---------- Sayfa hero: kaydırırken parallax ---------- */
+.page-hero .container{transform:translateY(calc(var(--sy,0) * .18px));opacity:calc(1 - var(--sy,0) / 900);will-change:transform}
+.page-hero .aurora{transform:translateY(calc(var(--sy,0) * .35px))}
+
+/* ---------- Ekran galerisi: sticky 3D cover-flow ---------- */
+.gal{position:relative;height:calc(var(--n,3) * 90vh + 40vh);min-height:220vh;color:var(--white);overflow:visible!important;background:var(--deep)}
+.gal-sticky{position:sticky;top:0;height:100vh;isolation:isolate;display:flex;flex-direction:column;justify-content:center;gap:24px;overflow:hidden}
+.gal .sec-head{margin-bottom:0}
+.gal .sec-head h2{color:var(--white)}
+.gal-stage{position:relative;height:min(58vh,560px);margin-bottom:28px;perspective:1800px;perspective-origin:50% 40%;transform-style:preserve-3d}
+.gal-slide{position:absolute;left:50%;top:0;width:min(78vw,980px);margin:0 0 0 calc(min(78vw,980px) / -2);transform-style:preserve-3d;
+  transform:translateX(calc(var(--d,0) * 62%)) translateZ(calc(var(--a,0) * -420px)) rotateY(calc(var(--d,0) * -38deg));
+  opacity:calc(1 - var(--a,0) * .45);transition:transform .12s linear,opacity .12s linear;will-change:transform;z-index:calc(10 - var(--ai,0))}
+.gal-slide .frame{box-shadow:0 50px 120px -30px rgba(0,0,0,.8),0 0 0 1px rgba(94,234,212,.18)}
+.gal-slide .frame img{display:block;width:100%;height:min(52vh,500px);object-fit:cover;object-position:top}
+.gal-slide figcaption{margin-top:18px;text-align:center;font-size:var(--text-sm);color:var(--muted-dark);opacity:calc(1 - var(--a,0) * 2)}
+.gal-dots{display:flex;justify-content:center;gap:8px}
+.gal-dots i{width:28px;height:4px;border-radius:2px;background:rgba(255,255,255,.18);transition:background .3s,width .3s}
+.gal-dots i.is-on{background:var(--mint);width:48px}
+
+/* ---------- Split: parallax kartlar ---------- */
+.split-visual{position:relative;perspective:1200px}
+.split-visual .frame{transform:rotateY(-8deg) rotateX(calc(var(--py,0) * 6deg)) translateY(calc(var(--py,0) * -20px));transition:transform .15s linear;will-change:transform}
+.split-card{position:absolute;z-index:3;max-width:260px;padding:14px 16px;border-radius:14px;background:rgba(11,31,29,.9);color:var(--white);
+  border:1px solid rgba(94,234,212,.3);box-shadow:0 30px 60px rgba(5,20,18,.45);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  will-change:transform;transition:transform .15s linear}
+.split-card b{display:block;font-size:13px;margin-bottom:4px}
+.split-card small{display:block;font-size:12px;line-height:1.45;color:var(--muted-dark)}
+.split-card.c1{left:-40px;top:8%;transform:translateZ(80px) translateY(calc(var(--py,0) * -60px))}
+.split-card.c2{right:-30px;bottom:6%;transform:translateZ(60px) translateY(calc(var(--py,0) * 60px))}
+.split-card::before{content:"";position:absolute;left:-1px;top:12px;bottom:12px;width:3px;border-radius:3px;background:linear-gradient(180deg,var(--mint),var(--teal))}
+
+/* ---------- Özellik kartı: ikon derinliği + hover numarası ---------- */
+.feature{position:relative;counter-increment:feat}
+.feature::after{content:"0" counter(feat);position:absolute;right:18px;top:14px;font-family:var(--font-display);font-size:34px;line-height:1;color:rgba(15,118,110,.08);transform:translateZ(10px);transition:color .3s}
+.feature:hover::after{color:rgba(15,118,110,.25)}
+.features{counter-reset:feat}
+.feature .product-icon,.feature h3{transform:translateZ(20px)}
+.feature p{transform:translateZ(8px)}
+
+/* ---------- İletişim formu: 3D kart ---------- */
+.contact{perspective:1400px}
+.contact .form{transform:rotateY(calc(var(--fy,0) * 1deg)) rotateX(calc(var(--fx,0) * 1deg));transform-style:preserve-3d;transition:transform .2s cubic-bezier(.2,.7,.2,1);
+  box-shadow:0 40px 90px -30px rgba(15,118,110,.35)}
+.contact .form .field{transform:translateZ(10px)}
+
+/* ---------- Mobil / hareket azaltma ---------- */
+@media (max-width:900px){
+  .gal{height:auto;min-height:0;padding:var(--section) 0}
+  .gal-sticky{position:static;height:auto;overflow:visible}
+  .gal-stage{height:auto;display:grid;gap:18px;perspective:none}
+  .gal-slide{position:static;width:auto;margin:0;transform:none!important;opacity:1!important}
+  .gal-slide .frame img{height:auto}
+  .gal-dots{display:none}
+  .split-card{display:none}
+  .split-visual .frame{transform:none!important}
+  .page-hero .container,.page-hero .aurora{transform:none;opacity:1}
+}
+@media (prefers-reduced-motion:reduce){
+  .reveal-3d,.reveal-stagger > *{opacity:1;transform:none;transition:none}
+  .gal-slide,.split-visual .frame,.split-card,.contact .form{transform:none!important;transition:none}
+}
+
+/* ---------- Marka: footer tagline ---------- */
+.footer .brand-name{display:inline-flex;flex-direction:column;line-height:1.05}
+.brand-tag{font-family:var(--font-body);font-size:9px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--mint);margin-top:4px}

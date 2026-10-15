@@ -1,0 +1,229 @@
+/* depth.js — 3D sahne, parçacık ağı, kart eğilme, mıknatıs buton, imleç ışığı */
+(function () {
+  'use strict';
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  var narrow = function () { return window.innerWidth < 900; };
+  if (reduce) return;
+
+  // ---- Hero başlığı: kelimeleri sar (son kelime vurgulu)
+  var h1 = document.querySelector('.hero h1');
+  if (h1 && !h1.querySelector('.w')) {
+    var words = h1.textContent.trim().split(/\s+/);
+    h1.innerHTML = words.map(function (w, i) {
+      var hl = /nokta|place|tek/i.test(w) ? ' hl' : '';
+      return '<span class="w' + hl + '" style="--n:' + i + '">' + w + '</span>';
+    }).join(' ');
+  }
+
+  // ---- Hero 3D sahne: fare ile eğilme, kaydırmada düzleşme
+  var stage = document.querySelector('.hero-stage');
+  var hero = document.querySelector('.hero');
+  if (stage && hero) {
+    var sx = 0;
+    var onScroll = function () {
+      var y = window.scrollY, h = hero.offsetHeight || 600;
+      var p = Math.min(y / (h * 0.6), 1);
+      // tepede hafif yatık (14deg), aşağı indikçe düzleşir ve geri yatar
+      sx = 14 - p * 26;
+      stage.style.setProperty('--sx', sx.toFixed(2) + 'deg');
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    if (fine) {
+      hero.addEventListener('pointermove', function (e) {
+        if (narrow()) return;
+        var r = hero.getBoundingClientRect();
+        var px = (e.clientX - r.left) / r.width - 0.5, py = (e.clientY - r.top) / r.height - 0.5;
+        stage.style.setProperty('--ry', (px * 14).toFixed(2) + 'deg');
+        stage.style.setProperty('--rx', (-py * 10).toFixed(2) + 'deg');
+      });
+      hero.addEventListener('pointerleave', function () {
+        stage.style.setProperty('--ry', '0deg'); stage.style.setProperty('--rx', '0deg');
+      });
+    }
+  }
+
+  // ---- Ürün sayfası vitrini: kaydırdıkça düzleşen ekran
+  var show = document.querySelector('.showcase .frame');
+  if (show) {
+    var onShow = function () {
+      var r = show.getBoundingClientRect(), vh = window.innerHeight;
+      var p = Math.min(Math.max((vh - r.top) / (vh * 0.7), 0), 1);
+      show.style.setProperty('--sx', (16 - p * 16).toFixed(2) + 'deg');
+    };
+    onShow();
+    window.addEventListener('scroll', onShow, { passive: true });
+    window.addEventListener('resize', onShow);
+  }
+
+  // ---- Kartlar: 3D eğilme + parlama
+  if (fine) {
+    var cards = document.querySelectorAll('.product, .feature, .why article');
+    cards.forEach(function (card) {
+      if (card.classList.contains('product') && !card.querySelector('.glare')) {
+        var g = document.createElement('i'); g.className = 'glare'; card.appendChild(g);
+      }
+      var max = card.classList.contains('featured') ? 4 : 8;
+      card.addEventListener('pointermove', function (e) {
+        var r = card.getBoundingClientRect();
+        var px = (e.clientX - r.left) / r.width - 0.5, py = (e.clientY - r.top) / r.height - 0.5;
+        card.style.setProperty('--ry', (px * max).toFixed(2) + 'deg');
+        card.style.setProperty('--rx', (-py * max).toFixed(2) + 'deg');
+        card.style.setProperty('--ga', (Math.atan2(py, px) * 180 / Math.PI + 90).toFixed(0) + 'deg');
+      });
+      card.addEventListener('pointerleave', function () {
+        card.style.setProperty('--ry', '0deg'); card.style.setProperty('--rx', '0deg');
+      });
+    });
+
+    // ---- Mıknatıs butonlar
+    document.querySelectorAll('.btn').forEach(function (b) {
+      b.addEventListener('pointermove', function (e) {
+        var r = b.getBoundingClientRect();
+        var dx = e.clientX - (r.left + r.width / 2), dy = e.clientY - (r.top + r.height / 2);
+        b.style.setProperty('--bx', (dx * 0.22).toFixed(1) + 'px');
+        b.style.setProperty('--by', (dy * 0.22).toFixed(1) + 'px');
+      });
+      b.addEventListener('pointerleave', function () { b.style.setProperty('--bx', '0px'); b.style.setProperty('--by', '0px'); });
+    });
+
+    // ---- İmleç ışığı: koyu bantlarda görünür
+    var glow = document.createElement('div'); glow.className = 'cursor-glow'; document.body.appendChild(glow);
+    var darkSel = '.hero, .band-dark, .cta, .page-hero, .showcase, .footer';
+    var raf = null, gx = 0, gy = 0;
+    document.addEventListener('pointermove', function (e) {
+      gx = e.clientX; gy = e.clientY;
+      var over = e.target.closest && e.target.closest(darkSel);
+      glow.classList.toggle('is-on', !!over);
+      if (!raf) raf = requestAnimationFrame(function () {
+        glow.style.setProperty('--cx', gx + 'px'); glow.style.setProperty('--cy', gy + 'px'); raf = null;
+      });
+    });
+    document.addEventListener('pointerleave', function () { glow.classList.remove('is-on'); });
+  }
+
+  // ---- Parçacık ağı (hero)
+  var canvas = document.querySelector('.hero .net');
+  if (canvas && canvas.getContext) {
+    var ctx = canvas.getContext('2d'), W, H, pts = [], mouse = { x: -9999, y: -9999 }, dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var N = function () { return narrow() ? 36 : 80; };
+    var resize = function () {
+      var r = canvas.parentElement.getBoundingClientRect();
+      W = r.width; H = r.height;
+      canvas.width = W * dpr; canvas.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      pts = [];
+      for (var i = 0; i < N(); i++) pts.push({ x: Math.random() * W, y: Math.random() * H, vx: (Math.random() - .5) * .25, vy: (Math.random() - .5) * .25, r: 1 + Math.random() * 1.6 });
+    };
+    resize();
+    window.addEventListener('resize', resize);
+    if (fine) {
+      canvas.parentElement.addEventListener('pointermove', function (e) { var r = canvas.getBoundingClientRect(); mouse.x = e.clientX - r.left; mouse.y = e.clientY - r.top; });
+      canvas.parentElement.addEventListener('pointerleave', function () { mouse.x = mouse.y = -9999; });
+    }
+    var visible = true;
+    if ('IntersectionObserver' in window) new IntersectionObserver(function (en) { visible = en[0].isIntersecting; }).observe(canvas);
+    var tick = function () {
+      if (visible) {
+        ctx.clearRect(0, 0, W, H);
+        var L = 130;
+        for (var i = 0; i < pts.length; i++) {
+          var p = pts[i];
+          p.x += p.vx; p.y += p.vy;
+          if (p.x < 0 || p.x > W) p.vx *= -1;
+          if (p.y < 0 || p.y > H) p.vy *= -1;
+          // fareden hafifçe kaç
+          var dx = p.x - mouse.x, dy = p.y - mouse.y, d2 = dx * dx + dy * dy;
+          if (d2 < 150 * 150) { var d = Math.sqrt(d2) || 1; p.x += dx / d * .6; p.y += dy / d * .6; }
+          for (var j = i + 1; j < pts.length; j++) {
+            var q = pts[j], ex = p.x - q.x, ey = p.y - q.y, e2 = ex * ex + ey * ey;
+            if (e2 < L * L) {
+              var a = (1 - Math.sqrt(e2) / L) * .35;
+              ctx.strokeStyle = 'rgba(94,234,212,' + a.toFixed(3) + ')'; ctx.lineWidth = 1;
+              ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(q.x, q.y); ctx.stroke();
+            }
+          }
+          ctx.fillStyle = 'rgba(94,234,212,.9)';
+          ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2); ctx.fill();
+        }
+      }
+      requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }
+
+  // ---- Bölüm başlıkları alt çizgi
+  var heads = document.querySelectorAll('.sec-head');
+  if (heads.length && 'IntersectionObserver' in window) {
+    var hio = new IntersectionObserver(function (entries) { entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('is-in'); hio.unobserve(en.target); } }); }, { threshold: 0.4 });
+    heads.forEach(function (h) { hio.observe(h); });
+  }
+})();
+
+/* ---- İç sayfalar: scroll 3D ---- */
+(function () {
+  'use strict';
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  if (reduce) return;
+  var narrow = function () { return window.innerWidth < 900; };
+
+  // reveal-3d / reveal-stagger (IntersectionObserver)
+  var els = document.querySelectorAll('.reveal-3d, .reveal-stagger');
+  if (els.length && 'IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); } });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.15 });
+    els.forEach(function (el) { io.observe(el); });
+  } else { els.forEach(function (el) { el.classList.add('is-in'); }); }
+
+  // Sayfa hero parallax
+  var ph = document.querySelector('.page-hero');
+  // Galeri
+  var gal = document.querySelector('.gal');
+  var slides = gal ? gal.querySelectorAll('.gal-slide') : [];
+  var dots = gal ? gal.querySelectorAll('.gal-dots i') : [];
+  var n = slides.length;
+  if (gal) gal.style.setProperty('--n', n);
+  // Split parallax
+  var sv = document.querySelector('.split-visual');
+
+  var update = function () {
+    var y = window.scrollY, vh = window.innerHeight;
+    if (ph) ph.style.setProperty('--sy', Math.min(y, 900));
+    if (gal && n && !narrow()) {
+      var r = gal.getBoundingClientRect();
+      var total = gal.offsetHeight - vh;
+      var p = Math.min(Math.max(-r.top / total, 0), 1);
+      var pos = p * (n - 1);
+      var active = Math.round(pos);
+      for (var i = 0; i < n; i++) {
+        var d = i - pos, a = Math.abs(d);
+        slides[i].style.setProperty('--d', d.toFixed(3));
+        slides[i].style.setProperty('--a', Math.min(a, 2).toFixed(3));
+        slides[i].style.setProperty('--ai', Math.round(a));
+        if (dots[i]) dots[i].classList.toggle('is-on', i === active);
+      }
+    }
+    if (sv && !narrow()) {
+      var sr = sv.getBoundingClientRect();
+      var c = (sr.top + sr.height / 2 - vh / 2) / vh; // -1..1
+      sv.style.setProperty('--py', Math.max(-1, Math.min(1, c)).toFixed(3));
+    }
+  };
+  update();
+  var ticking = false;
+  window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(function () { update(); ticking = false; }); } }, { passive: true });
+  window.addEventListener('resize', update);
+
+  // İletişim formu: fareyle eğilme
+  var form = document.querySelector('.contact .form');
+  if (form && fine) {
+    form.addEventListener('pointermove', function (e) {
+      var r = form.getBoundingClientRect();
+      form.style.setProperty('--fy', (((e.clientX - r.left) / r.width - .5) * 6).toFixed(2));
+      form.style.setProperty('--fx', (-((e.clientY - r.top) / r.height - .5) * 6).toFixed(2));
+    });
+    form.addEventListener('pointerleave', function () { form.style.setProperty('--fy', 0); form.style.setProperty('--fx', 0); });
+  }
+})();

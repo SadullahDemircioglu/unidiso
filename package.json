@@ -1,0 +1,8 @@
+{
+  "name": "unidiso-site",
+  "private": true,
+  "scripts": {
+    "build": "node build.js",
+    "serve": "npx --yes serve -l 8080 ."
+  }
+}
