@@ -179,32 +179,12 @@
 
   // Sayfa hero parallax
   var ph = document.querySelector('.page-hero');
-  // Galeri
-  var gal = document.querySelector('.gal');
-  var slides = gal ? gal.querySelectorAll('.gal-slide') : [];
-  var dots = gal ? gal.querySelectorAll('.gal-dots i') : [];
-  var n = slides.length;
-  if (gal) gal.style.setProperty('--n', n);
   // Split parallax
   var sv = document.querySelector('.split-visual');
 
   var update = function () {
     var y = window.scrollY, vh = window.innerHeight;
     if (ph) ph.style.setProperty('--sy', Math.min(y, 900));
-    if (gal && n && !narrow()) {
-      var r = gal.getBoundingClientRect();
-      var total = gal.offsetHeight - vh;
-      var p = Math.min(Math.max(-r.top / total, 0), 1);
-      var pos = p * (n - 1);
-      var active = Math.round(pos);
-      for (var i = 0; i < n; i++) {
-        var d = i - pos, a = Math.abs(d);
-        slides[i].style.setProperty('--d', d.toFixed(3));
-        slides[i].style.setProperty('--a', Math.min(a, 2).toFixed(3));
-        slides[i].style.setProperty('--ai', Math.round(a));
-        if (dots[i]) dots[i].classList.toggle('is-on', i === active);
-      }
-    }
     if (sv && !narrow()) {
       var sr = sv.getBoundingClientRect();
       var c = (sr.top + sr.height / 2 - vh / 2) / vh; // -1..1
@@ -226,4 +206,48 @@
     });
     form.addEventListener('pointerleave', function () { form.style.setProperty('--fy', 0); form.style.setProperty('--fx', 0); });
   }
+})();
+
+/* ---- Ürün ekran galerisi: tıklama / ok / klavye / kaydırma (swipe) ---- */
+(function () {
+  'use strict';
+  var gal = document.querySelector('.gal');
+  if (!gal) return;
+  var slides = [].slice.call(gal.querySelectorAll('.gal-slide'));
+  var tabs = [].slice.call(gal.querySelectorAll('.gal-tab'));
+  var prev = gal.querySelector('.gal-prev'), next = gal.querySelector('.gal-next');
+  var stage = gal.querySelector('.gal-stage');
+  var n = slides.length, cur = 0;
+  function go(i) {
+    cur = Math.max(0, Math.min(n - 1, i));
+    slides.forEach(function (s, k) {
+      var o = k - cur;
+      s.classList.toggle('is-active', o === 0);
+      s.classList.toggle('is-prev', o === -1);
+      s.classList.toggle('is-next', o === 1);
+    });
+    tabs.forEach(function (t, k) {
+      var on = k === cur;
+      t.classList.toggle('is-on', on);
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      if (on && t.scrollIntoView && t.parentNode.scrollWidth > t.parentNode.clientWidth) t.parentNode.scrollTo({ left: t.offsetLeft - 16, behavior: 'smooth' });
+    });
+    if (prev) prev.disabled = cur === 0;
+    if (next) next.disabled = cur === n - 1;
+  }
+  slides.forEach(function (s, k) { s.addEventListener('click', function () { if (k !== cur) go(k); }); });
+  tabs.forEach(function (t, k) { t.addEventListener('click', function () { go(k); }); });
+  if (prev) prev.addEventListener('click', function () { go(cur - 1); });
+  if (next) next.addEventListener('click', function () { go(cur + 1); });
+  gal.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowLeft') { go(cur - 1); } else if (e.key === 'ArrowRight') { go(cur + 1); }
+  });
+  var x0 = null;
+  stage.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+  stage.addEventListener('touchend', function (e) {
+    if (x0 === null) return;
+    var dx = e.changedTouches[0].clientX - x0; x0 = null;
+    if (Math.abs(dx) > 40) go(cur + (dx < 0 ? 1 : -1));
+  }, { passive: true });
+  go(0);
 })();

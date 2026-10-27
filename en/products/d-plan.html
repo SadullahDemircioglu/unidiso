@@ -19,7 +19,7 @@
 </head>
 <body><header class="nav">
   <div class="container nav-inner">
-    <a class="brand" href="/en/" aria-label="Unidiso"><svg viewBox="0 0 60 60" aria-hidden="true"><rect x="0" y="0" width="27" height="27" rx="3" fill="currentColor"/><rect x="33" y="0" width="27" height="27" rx="3" fill="currentColor"/><rect x="0" y="33" width="27" height="27" rx="3" fill="currentColor"/><circle cx="46.5" cy="46.5" r="13.5" fill="#5EEAD4"/></svg><span class="brand-name">Unidiso</span></a>
+    <a class="brand" href="/en/" aria-label="Unidiso"><svg viewBox="0 0 60 60" aria-hidden="true"><rect x="0" y="0" width="27" height="27" rx="3" fill="currentColor"/><rect x="33" y="0" width="27" height="27" rx="3" fill="currentColor"/><rect x="0" y="33" width="27" height="27" rx="3" fill="currentColor"/><circle cx="46.5" cy="46.5" r="13.5" fill="#5EEAD4"/></svg><span class="brand-name">Unidiso<small class="brand-tag">University Digital Solutions</small></span></a>
     <nav aria-label="Products"><ul class="nav-links"><li><a href="/en/#products" aria-current="page">Products</a></li><li><a href="/en/#why">Why Unidiso</a></li><li><a href="/en/contact">Contact</a></li></ul></nav>
     <div class="nav-cta">
       <a class="lang" href="/" hreflang="tr">TR</a>
@@ -50,9 +50,12 @@
 <section class="gal band-dark" data-n="3">
   <div class="gal-sticky">
     <div class="grid-bg"></div><div class="aurora" style="opacity:.5"><i class="beam-1"></i><i class="beam-2"></i><i class="glow"></i></div><div class="grain"></div>
-    <div class="container"><div class="sec-head"><h2>Inside the product</h2><p class="muted">Scroll to move between screens.</p></div></div>
-    <div class="gal-stage"><figure class="gal-slide" style="--k:0"><div class="frame"><div class="frame-bar"><i></i><i></i><i></i><b>D-plan</b></div><img src="/assets/img/products/d-plan.png" alt="D-plan 1" loading="lazy"><div class="sheen"></div></div><figcaption>Automatically generated weekly timetable</figcaption></figure><figure class="gal-slide" style="--k:1"><div class="frame"><div class="frame-bar"><i></i><i></i><i></i><b>D-plan</b></div><img src="/assets/img/products/d-plan-2.png" alt="D-plan 2" loading="lazy"><div class="sheen"></div></div><figcaption>Floor plan: room occupancy map</figcaption></figure><figure class="gal-slide" style="--k:2"><div class="frame"><div class="frame-bar"><i></i><i></i><i></i><b>D-plan</b></div><img src="/assets/img/products/d-plan-3.png" alt="D-plan 3" loading="lazy"><div class="sheen"></div></div><figcaption>Free rooms — weekly availability</figcaption></figure></div>
-    <div class="gal-dots"><i style="--k:0"></i><i style="--k:1"></i><i style="--k:2"></i></div>
+    <div class="container"><div class="sec-head"><h2>Inside the product</h2><p class="muted">Click a screen or a title below to switch between screens.</p></div></div>
+    <div class="gal-stage"><figure class="gal-slide is-active" data-i="0"><div class="frame"><div class="frame-bar"><i></i><i></i><i></i><b>D-plan</b></div><img src="/assets/img/products/d-plan.png" alt="D-plan 1" loading="eager" decoding="async"></div></figure><figure class="gal-slide" data-i="1"><div class="frame"><div class="frame-bar"><i></i><i></i><i></i><b>D-plan</b></div><img src="/assets/img/products/d-plan-2.png" alt="D-plan 2" loading="eager" decoding="async"></div></figure><figure class="gal-slide" data-i="2"><div class="frame"><div class="frame-bar"><i></i><i></i><i></i><b>D-plan</b></div><img src="/assets/img/products/d-plan-3.png" alt="D-plan 3" loading="eager" decoding="async"></div></figure>
+      <button type="button" class="gal-arrow gal-prev" aria-label="Previous screen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <button type="button" class="gal-arrow gal-next" aria-label="Next screen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
+    </div>
+    <div class="container"><div class="gal-tabs" role="tablist"><button type="button" class="gal-tab is-on" role="tab" aria-selected="true" data-i="0"><span>01</span>Automatically generated weekly timetable</button><button type="button" class="gal-tab" role="tab" aria-selected="false" data-i="1"><span>02</span>Floor plan: room occupancy map</button><button type="button" class="gal-tab" role="tab" aria-selected="false" data-i="2"><span>03</span>Free rooms — weekly availability</button></div></div>
   </div>
 </section>
 

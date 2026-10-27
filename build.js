@@ -93,21 +93,25 @@ function galleryImgs(p) {
 function gallery(p, captions) {
   const imgs = galleryImgs(p);
   if (imgs.length < 2) return '';
-  const slides = imgs.map((src, i) => `<figure class="gal-slide" style="--k:${i}"><div class="frame"><div class="frame-bar"><i></i><i></i><i></i><b>${e(p.name)}</b></div><img src="${src}" alt="${e(p.name)} ${i + 1}" loading="lazy"><div class="sheen"></div></div>${captions[i] ? `<figcaption>${e(captions[i])}</figcaption>` : ''}</figure>`).join('');
-  const dots = imgs.map((_, i) => `<i style="--k:${i}"></i>`).join('');
+  const T = UI_TXT();
+  const slides = imgs.map((src, i) => `<figure class="gal-slide${i === 0 ? ' is-active' : ''}" data-i="${i}"><div class="frame"><div class="frame-bar"><i></i><i></i><i></i><b>${e(p.name)}</b></div><img src="${src}" alt="${e(p.name)} ${i + 1}" loading="eager" decoding="async"></div></figure>`).join('');
+  const tabs = imgs.map((_, i) => `<button type="button" class="gal-tab${i === 0 ? ' is-on' : ''}" role="tab" aria-selected="${i === 0}" data-i="${i}"><span>${String(i + 1).padStart(2, '0')}</span>${e(captions[i] || p.name)}</button>`).join('');
   return `<section class="gal band-dark" data-n="${imgs.length}">
   <div class="gal-sticky">
     ${AURORA.replace('class="aurora"', 'class="aurora" style="opacity:.5"')}
-    <div class="container"><div class="sec-head"><h2>${UI_TXT().screens_title}</h2><p class="muted">${UI_TXT().screens_lead}</p></div></div>
-    <div class="gal-stage">${slides}</div>
-    <div class="gal-dots">${dots}</div>
+    <div class="container"><div class="sec-head"><h2>${T.screens_title}</h2><p class="muted">${T.screens_lead}</p></div></div>
+    <div class="gal-stage">${slides}
+      <button type="button" class="gal-arrow gal-prev" aria-label="${T.prev}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <button type="button" class="gal-arrow gal-next" aria-label="${T.next}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
+    </div>
+    <div class="container"><div class="gal-tabs" role="tablist">${tabs}</div></div>
   </div>
 </section>`;
 }
 function UI_TXT() {
   return LANG === 'tr'
-    ? { screens_title: 'Ürünün içinden', screens_lead: 'Kaydırarak ekranlar arasında gezin.' }
-    : { screens_title: 'Inside the product', screens_lead: 'Scroll to move between screens.' };
+    ? { screens_title: 'Ürünün içinden', screens_lead: 'Ekranlar arasında geçmek için görsele veya alttaki başlıklara tıklayın.', prev: 'Önceki ekran', next: 'Sonraki ekran' }
+    : { screens_title: 'Inside the product', screens_lead: 'Click a screen or a title below to switch between screens.', prev: 'Previous screen', next: 'Next screen' };
 }
 
 /* ---------- Ekosistem SVG ---------- */
@@ -166,7 +170,7 @@ function nav(current = '') {
                 a(P.contact, N.contact, 'contact');
   return `<header class="nav">
   <div class="container nav-inner">
-    <a class="brand" href="${P.home}" aria-label="${S.name}">${SYMBOL}<span class="brand-name">${S.name}</span></a>
+    <a class="brand" href="${P.home}" aria-label="${S.name}">${SYMBOL}<span class="brand-name">${S.name}<small class="brand-tag">University Digital Solutions</small></span></a>
     <nav aria-label="${N.products}"><ul class="nav-links">${links}</ul></nav>
     <div class="nav-cta">
       <a class="lang" href="${P.other_lang}" hreflang="${LANG === 'tr' ? 'en' : 'tr'}">${P.other_lang_label}</a>
