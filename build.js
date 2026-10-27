@@ -7,6 +7,12 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = __dirname;
+// CSS/JS URL'lerine içerik hash'i ekle: deploy sonrası CDN/tarayıcı önbelleği eski dosyayı sunmasın
+const crypto = require('crypto');
+const ver = (rel) => crypto.createHash('md5').update(fs.readFileSync(path.join(__dirname, rel))).digest('hex').slice(0, 8);
+const ASSET_V = {};
+['css/main.css', 'css/effects.css', 'css/depth.css', 'js/main.js', 'js/depth.js'].forEach(f => { ASSET_V[f] = ver(f); });
+const asset = (f) => `/${f}?v=${ASSET_V[f]}`;
 const PRODUCT_IMG_DIR = path.join(ROOT, 'assets', 'img', 'products');
 
 const ICONS = {
@@ -155,9 +161,9 @@ function head(title, desc) {
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/main.css">
-<link rel="stylesheet" href="/css/effects.css">
-<link rel="stylesheet" href="/css/depth.css">
+<link rel="stylesheet" href="${asset('css/main.css')}">
+<link rel="stylesheet" href="${asset('css/effects.css')}">
+<link rel="stylesheet" href="${asset('css/depth.css')}">
 </head>
 <body>`;
 }
@@ -208,8 +214,8 @@ function footer() {
     <div class="footer-bottom"><span>© 2026 ${e(F.copyright)}</span><a class="lang" href="${P.other_lang}">${S.ui.lang_switch}</a></div>
   </div>
 </footer>
-<script src="/js/main.js" defer></script>
-<script src="/js/depth.js" defer></script>
+<script src="${asset('js/main.js')}" defer></script>
+<script src="${asset('js/depth.js')}" defer></script>
 </body>
 </html>`;
 }
